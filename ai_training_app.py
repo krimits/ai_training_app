@@ -55,11 +55,6 @@ with tabs[0]:
         ανθρώπινη νοημοσύνη.
         
         **Βασικές Κατηγορίες:**
-        - 🧠 **Machine Learning (ML)**: Μηχανές που μαθαίνουν από δεδομένα
-        - 🌐 **Deep Learning**: Νευρωνικά δίκτυα με πολλά επίπεδα  
-        - 💬 **Natural Language Processing (NLP)**: Επεξεργασία φυσικής γλώσσας
-        - 👁️ **Computer Vision**: Όραση υπολογιστών
-        - 🤖 **Robotics**: Ρομποτική και αυτονομία
         """)
         
     with col2:
@@ -73,6 +68,697 @@ with tabs[0]:
         - Οικονομικές προβλέψεις
         - Εξυπηρέτηση πελατών
         """)
+    
+    # Expandable sections for each AI category
+    with st.expander('🧠 **Machine Learning (ML)** - Μηχανές που μαθαίνουν από δεδομένα', expanded=False):
+        st.markdown("""
+        ### Τι είναι το Machine Learning;
+        
+        Το **Machine Learning** είναι ένας κλάδος της AI που επιτρέπει στους υπολογιστές να μαθαίνουν από δεδομένα 
+        χωρίς να προγραμματίζονται ρητά για κάθε εργασία.
+        
+        #### 📚 Βασικές Έννοιες
+        
+        **1. Τύποι Μάθησης:**
+        - **Supervised Learning** (Επιβλεπόμενη Μάθηση)
+          - Το μοντέλο εκπαιδεύεται με labeled data
+          - Στόχος: Πρόβλεψη outcomes
+          - Παραδείγματα: Classification (ταξινόμηση), Regression (παλινδρόμηση)
+          - Αλγόριθμοι: Linear Regression, Logistic Regression, Decision Trees, SVM, Random Forests
+        
+        - **Unsupervised Learning** (Μη Επιβλεπόμενη Μάθηση)
+          - Ανακάλυψη patterns σε unlabeled data
+          - Στόχος: Ομαδοποίηση και μείωση διαστάσεων
+          - Παραδείγματα: Clustering, Association Rules
+          - Αλγόριθμοι: K-Means, Hierarchical Clustering, PCA, Autoencoders
+        
+        - **Reinforcement Learning** (Ενισχυτική Μάθηση)
+          - Μάθηση μέσω interaction με περιβάλλον
+          - Στόχος: Μεγιστοποίηση rewards
+          - Παραδείγματα: Gaming AI, Robotics, Αυτόνομα οχήματα
+          - Αλγόριθμοι: Q-Learning, Deep Q-Networks (DQN), Policy Gradients
+        
+        #### 🔍 Βασικά Στάδια ML Pipeline
+        
+        1. **Data Collection** (Συλλογή Δεδομένων)
+           - Συγκέντρωση σχετικών δεδομένων
+           - Ποιότητα > Ποσότητα
+        
+        2. **Data Preprocessing** (Προεπεξεργασία)
+           - Καθαρισμός δεδομένων
+           - Χειρισμός missing values
+           - Normalization/Standardization
+           - Feature Engineering
+        
+        3. **Model Selection** (Επιλογή Μοντέλου)
+           - Επιλογή κατάλληλου αλγορίθμου
+           - Υπερπαράμετροι (hyperparameters)
+        
+        4. **Training** (Εκπαίδευση)
+           - Fit του μοντέλου στα training data
+           - Optimization (π.χ. Gradient Descent)
+        
+        5. **Evaluation** (Αξιολόγηση)
+           - Μετρικές: Accuracy, Precision, Recall, F1-Score
+           - Cross-validation
+           - Confusion Matrix
+        
+        6. **Deployment** (Παραγωγή)
+           - Θέση σε production
+           - Monitoring και maintenance
+        
+        #### 💼 Πρακτικές Εφαρμογές
+        
+        - **E-commerce**: Προτάσεις προϊόντων (Amazon, Netflix)
+        - **Finance**: Credit scoring, fraud detection
+        - **Healthcare**: Διάγνωση ασθενειών, drug discovery
+        - **Marketing**: Customer segmentation, churn prediction
+        - **Manufacturing**: Predictive maintenance, quality control
+        
+        #### 📊 Δημοφιλείς Βιβλιοθήκες Python
+        
+        - **scikit-learn**: Γενικού σκοπού ML
+        - **XGBoost**: Gradient boosting
+        - **LightGBM**: Fast gradient boosting
+        - **CatBoost**: Categorical features handling
+        
+        #### ⚠️ Προκλήσεις
+        
+        - **Overfitting**: Το μοντέλο μαθαίνει "απ' έξω" τα training data
+        - **Underfitting**: Το μοντέλο είναι πολύ απλό
+        - **Bias in Data**: Μεροληψία στα δεδομένα
+        - **Feature Engineering**: Δημιουργία σωστών features
+        """)
+    
+    with st.expander('🌐 **Deep Learning** - Νευρωνικά δίκτυα με πολλά επίπεδα', expanded=False):
+        st.markdown("""
+        ### Τι είναι το Deep Learning;
+        
+        Το **Deep Learning** είναι υποκατηγορία του Machine Learning που χρησιμοποιεί **νευρωνικά δίκτυα** 
+        με πολλά κρυφά επίπεδα (layers) για να μάθει πολύπλοκες αναπαραστάσεις από δεδομένα.
+        
+        #### 🧬 Αρχιτεκτονικές Neural Networks
+        
+        **1. Feedforward Neural Networks (FNN)**
+        - Το πιο βασικό τύπο νευρωνικού δικτύου
+        - Πληροφορία ρέει προς τα εμπρός (input → hidden → output)
+        - Χρήση: Tabular data, απλή classification/regression
+        
+        **2. Convolutional Neural Networks (CNN)**
+        - Ειδικευμένα για **εικόνες** και spatial data
+        - Convolution layers εξάγουν features
+        - Pooling layers μειώνουν διαστάσεις
+        - Παραδείγματα: ResNet, VGG, Inception, EfficientNet
+        - Εφαρμογές: 
+          - Image classification
+          - Object detection (YOLO, Faster R-CNN)
+          - Face recognition
+          - Medical imaging
+        
+        **3. Recurrent Neural Networks (RNN)**
+        - Για **sequential data** (κείμενο, χρονοσειρές)
+        - Έχουν "μνήμη" προηγούμενων states
+        - Παραδείγματα: LSTM, GRU
+        - Εφαρμογές:
+          - Natural Language Processing
+          - Speech recognition
+          - Time series prediction
+          - Music generation
+        
+        **4. Transformer Architecture**
+        - **Επανάσταση στο NLP** (2017)
+        - Self-attention mechanism
+        - Παράλληλη επεξεργασία (γρηγορότερο από RNN)
+        - Παραδείγματα: BERT, GPT, T5, Vision Transformer (ViT)
+        - Εφαρμογές:
+          - Language models (ChatGPT, Claude)
+          - Machine translation
+          - Text summarization
+          - Question answering
+        
+        **5. Generative Adversarial Networks (GANs)**
+        - Δύο δίκτυα "παλεύουν" (Generator vs Discriminator)
+        - Δημιουργία ρεαλιστικών δεδομένων
+        - Εφαρμογές:
+          - Image generation (StyleGAN, BigGAN)
+          - DeepFakes
+          - Data augmentation
+          - Art creation
+        
+        **6. Autoencoders**
+        - Συμπίεση και αποσυμπίεση δεδομένων
+        - Μάθηση latent representations
+        - Τύποι: VAE (Variational Autoencoders)
+        - Εφαρμογές:
+          - Dimensionality reduction
+          - Anomaly detection
+          - Denoising
+          - Image compression
+        
+        #### 🎯 Βασικά Concepts
+        
+        **Activation Functions:**
+        - ReLU (Rectified Linear Unit): f(x) = max(0, x)
+        - Sigmoid: f(x) = 1/(1+e^(-x))
+        - Tanh: f(x) = (e^x - e^(-x))/(e^x + e^(-x))
+        - Softmax: για classification
+        
+        **Optimization Algorithms:**
+        - SGD (Stochastic Gradient Descent)
+        - Adam (Adaptive Moment Estimation)
+        - RMSprop
+        - AdaGrad
+        
+        **Regularization Techniques:**
+        - Dropout: Απενεργοποίηση τυχαίων neurons
+        - L1/L2 Regularization
+        - Batch Normalization
+        - Early Stopping
+        
+        #### 💻 Frameworks
+        
+        - **TensorFlow**: Google's framework
+        - **PyTorch**: Facebook's framework (ερευνητικό favorite)
+        - **Keras**: High-level API (τώρα μέρος του TensorFlow)
+        - **JAX**: High-performance computing
+        
+        #### 🚀 Cutting-Edge Applications
+        
+        - **Computer Vision**: Self-driving cars, medical imaging
+        - **NLP**: ChatGPT, Google Translate, sentiment analysis
+        - **Speech**: Siri, Alexa, speech-to-text
+        - **Gaming**: AlphaGo, OpenAI Five (Dota 2)
+        - **Science**: Protein folding (AlphaFold), drug discovery
+        
+        #### ⚡ Απαιτήσεις
+        
+        - **Hardware**: GPU/TPU (NVIDIA, Google Cloud)
+        - **Data**: Μεγάλα datasets (χιλιάδες-εκατομμύρια δείγματα)
+        - **Time**: Εκπαίδευση μπορεί να πάρει ώρες/μέρες
+        - **Expertise**: Γνώση hyperparameters, architectures
+        """)
+    
+    with st.expander('💬 **Natural Language Processing (NLP)** - Επεξεργασία Φυσικής Γλώσσας', expanded=False):
+        st.markdown("""
+        ### Τι είναι το NLP;
+        
+        Το **Natural Language Processing** είναι ο κλάδος της AI που ασχολείται με την αλληλεπίδραση 
+        μεταξύ υπολογιστών και ανθρώπινης γλώσσας.
+        
+        #### 📝 Βασικές Εργασίες NLP
+        
+        **1. Text Classification**
+        - Sentiment Analysis (ανάλυση συναισθήματος)
+        - Spam Detection
+        - Topic Classification
+        - Intent Detection (chatbots)
+        
+        **2. Named Entity Recognition (NER)**
+        - Εντοπισμός ονομάτων, τόπων, ημερομηνιών
+        - Εξαγωγή πληροφορίας από κείμενο
+        
+        **3. Machine Translation**
+        - Μετάφραση μεταξύ γλωσσών
+        - Google Translate, DeepL
+        - Neural Machine Translation (NMT)
+        
+        **4. Question Answering**
+        - Απάντηση σε ερωτήσεις
+        - Reading comprehension
+        - ChatGPT, Bing Chat
+        
+        **5. Text Summarization**
+        - Αυτόματη σύνοψη κειμένων
+        - Extractive vs Abstractive
+        
+        **6. Text Generation**
+        - Δημιουργία κειμένου
+        - GPT models, content creation
+        - Story writing, code generation
+        
+        **7. Speech Recognition**
+        - Speech-to-text
+        - Siri, Google Assistant, Alexa
+        
+        **8. Part-of-Speech Tagging**
+        - Ταυτοποίηση μερών του λόγου
+        - Σύνταξη και γραμματική ανάλυση
+        
+        #### 🔤 Βασικά Στάδια NLP Pipeline
+        
+        **1. Tokenization**
+        - Διαχωρισμός κειμένου σε tokens (λέξεις, προτάσεις)
+        - Word tokenization, sentence tokenization
+        
+        **2. Text Cleaning**
+        - Lowercase conversion
+        - Αφαίρεση σημείων στίξης
+        - Αφαίρεση stop words (the, and, is...)
+        
+        **3. Stemming / Lemmatization**
+        - Stemming: running → run (αφαίρεση καταλήξεων)
+        - Lemmatization: better → good (γραμματική μορφή)
+        
+        **4. Feature Extraction**
+        - **Bag of Words (BoW)**: Συχνότητα λέξεων
+        - **TF-IDF**: Term Frequency - Inverse Document Frequency
+        - **Word Embeddings**: Word2Vec, GloVe, FastText
+        - **Contextualized Embeddings**: BERT, ELMo
+        
+        **5. Model Training**
+        - Traditional ML: Naive Bayes, SVM, Random Forest
+        - Deep Learning: RNN, LSTM, Transformers
+        
+        #### 🤖 Σύγχρονα NLP Models
+        
+        **Pre-trained Language Models:**
+        
+        - **BERT** (Bidirectional Encoder Representations from Transformers)
+          - Κατανόηση context από δύο κατευθύνσεις
+          - Fine-tuning για specific tasks
+        
+        - **GPT** (Generative Pre-trained Transformer)
+          - GPT-3, GPT-4: Μοντέλα δημιουργίας κειμένου
+          - ChatGPT: Conversational AI
+        
+        - **T5** (Text-to-Text Transfer Transformer)
+          - Όλες οι εργασίες ως text-to-text
+        
+        - **RoBERTa**: Optimized BERT
+        
+        - **XLNet**: Permutation language modeling
+        
+        - **ELECTRA**: Efficient pre-training
+        
+        #### 🌍 Multilingual NLP
+        
+        - **mBERT**: Multilingual BERT
+        - **XLM-R**: Cross-lingual modeling
+        - Υποστήριξη 100+ γλωσσών
+        
+        #### 💼 Εφαρμογές
+        
+        - **Chatbots**: Εξυπηρέτηση πελατών 24/7
+        - **Virtual Assistants**: Siri, Alexa, Google Assistant
+        - **Content Moderation**: Φιλτράρισμα toxic content
+        - **Email Filtering**: Spam detection
+        - **Social Media**: Sentiment analysis, trend detection
+        - **Healthcare**: Clinical notes analysis
+        - **Legal**: Contract analysis, document review
+        - **Finance**: News analysis, earnings calls
+        
+        #### 📚 Βιβλιοθήκες Python
+        
+        - **NLTK**: Natural Language Toolkit (traditional)
+        - **spaCy**: Industrial-strength NLP
+        - **Transformers (Hugging Face)**: Pre-trained models
+        - **Gensim**: Topic modeling, word embeddings
+        - **TextBlob**: Simple NLP tasks
+        
+        #### 🎯 Προκλήσεις
+        
+        - **Ambiguity**: Πολυσημία λέξεων
+        - **Context**: Κατανόηση πλαισίου
+        - **Sarcasm/Irony**: Δύσκολο να ανιχνευθεί
+        - **Cultural Nuances**: Πολιτισμικές διαφορές
+        - **Low-resource Languages**: Λίγα δεδομένα για κάποιες γλώσσες
+        """)
+    
+    with st.expander('👁️ **Computer Vision** - Όραση Υπολογιστών', expanded=False):
+        st.markdown("""
+        ### Τι είναι η Computer Vision;
+        
+        Η **Computer Vision** είναι ο κλάδος της AI που επιτρέπει στους υπολογιστές να "βλέπουν" 
+        και να κατανοούν το περιεχόμενο εικόνων και βίντεο.
+        
+        #### 🎯 Βασικές Εργασίες Computer Vision
+        
+        **1. Image Classification**
+        - Ταξινόμηση εικόνων σε κατηγορίες
+        - Παράδειγμα: Γάτα vs Σκύλος
+        - Datasets: ImageNet (1000 κατηγορίες)
+        - Models: ResNet, VGG, Inception, EfficientNet
+        
+        **2. Object Detection**
+        - Εντοπισμός αντικειμένων σε εικόνα
+        - Bounding boxes + classification
+        - Real-time detection
+        - Algorithms:
+          - **YOLO** (You Only Look Once): Real-time
+          - **Faster R-CNN**: High accuracy
+          - **SSD**: Single Shot Detector
+          - **RetinaNet**: Focal loss
+        
+        **3. Semantic Segmentation**
+        - Ταξινόμηση κάθε pixel σε κατηγορία
+        - Pixel-level understanding
+        - Models: U-Net, DeepLab, SegNet
+        - Εφαρμογές: Autonomous driving, medical imaging
+        
+        **4. Instance Segmentation**
+        - Διαχωρισμός επιμέρους instances
+        - Mask R-CNN
+        - Συνδυασμός detection + segmentation
+        
+        **5. Face Recognition**
+        - Αναγνώριση προσώπου
+        - Face detection → Face alignment → Face recognition
+        - Models: FaceNet, DeepFace, ArcFace
+        - Εφαρμογές: Security, photo tagging, authentication
+        
+        **6. Pose Estimation**
+        - Εντοπισμός keypoints του σώματος
+        - Skeleton detection
+        - Models: OpenPose, PoseNet
+        - Εφαρμογές: Sports analysis, AR/VR, fitness apps
+        
+        **7. Image Generation**
+        - Δημιουργία νέων εικόνων
+        - GANs, Diffusion Models
+        - Παραδείγματα:
+          - **StyleGAN**: Ρεαλιστικά πρόσωπα
+          - **DALL-E**: Text-to-image
+          - **Stable Diffusion**: Open-source generation
+          - **Midjourney**: Artistic images
+        
+        **8. Video Analysis**
+        - Action recognition
+        - Video classification
+        - Tracking objects σε βίντεο
+        - Activity detection
+        
+        #### 🏗️ Αρχιτεκτονικές CNN για Computer Vision
+        
+        **Classic Architectures:**
+        - **LeNet-5** (1998): Πρώτο CNN για MNIST
+        - **AlexNet** (2012): ImageNet winner, ReLU, dropout
+        - **VGG** (2014): Πολύ βαθύ δίκτυο (16-19 layers)
+        - **GoogleNet/Inception** (2014): Inception modules
+        
+        **Modern Architectures:**
+        - **ResNet** (2015): Residual connections, 50-152 layers
+        - **DenseNet** (2017): Dense connections
+        - **EfficientNet** (2019): Optimal scaling
+        - **Vision Transformer (ViT)** (2020): Transformers for images
+        - **Swin Transformer** (2021): Hierarchical transformers
+        
+        #### 🔍 Βασικά Concepts
+        
+        **Convolution:**
+        - Filters/Kernels εξάγουν features
+        - Edge detection, texture, patterns
+        - Spatial hierarchy (low → high level features)
+        
+        **Pooling:**
+        - Max pooling, Average pooling
+        - Μείωση διαστάσεων
+        - Translation invariance
+        
+        **Data Augmentation:**
+        - Rotation, flipping, cropping
+        - Color jittering
+        - Mixup, CutMix
+        - Αύξηση dataset artificially
+        
+        **Transfer Learning:**
+        - Pre-trained models σε ImageNet
+        - Fine-tuning για specific task
+        - Feature extraction
+        
+        #### 💼 Εφαρμογές στην Πράξη
+        
+        **Αυτόνομα Οχήματα:**
+        - Lane detection
+        - Object detection (πεζοί, οχήματα)
+        - Traffic sign recognition
+        - Depth estimation
+        
+        **Healthcare:**
+        - X-ray analysis
+        - CT/MRI scan interpretation
+        - Skin cancer detection
+        - Retinal disease diagnosis
+        - COVID-19 detection
+        
+        **Retail:**
+        - Visual search (εύρεση προϊόντων από φωτό)
+        - Cashier-less stores (Amazon Go)
+        - Inventory management
+        
+        **Security:**
+        - Surveillance systems
+        - Anomaly detection
+        - Facial recognition για access control
+        
+        **Agriculture:**
+        - Crop monitoring
+        - Disease detection σε φυτά
+        - Yield prediction
+        
+        **Manufacturing:**
+        - Quality inspection
+        - Defect detection
+        - Assembly verification
+        
+        **Social Media:**
+        - Auto-tagging φωτογραφιών
+        - Content moderation
+        - Filters και effects (Snapchat, Instagram)
+        
+        #### 🛠️ Tools και Frameworks
+        
+        **Deep Learning:**
+        - TensorFlow, PyTorch
+        - Keras
+        - ONNX (model interchange)
+        
+        **Computer Vision Libraries:**
+        - **OpenCV**: Traditional CV algorithms
+        - **Pillow (PIL)**: Image processing
+        - **scikit-image**: Image algorithms
+        - **Detectron2**: Facebook's CV library
+        - **MMDetection**: Toolbox for object detection
+        
+        **Pre-trained Models:**
+        - **Torchvision**: PyTorch models
+        - **Keras Applications**: TensorFlow models
+        - **Timm**: PyTorch Image Models
+        
+        #### 📊 Μετρικές Αξιολόγησης
+        
+        - **Classification**: Accuracy, Precision, Recall, F1
+        - **Object Detection**: mAP (mean Average Precision), IoU
+        - **Segmentation**: Dice coefficient, IoU
+        - **Image Generation**: FID (Fréchet Inception Distance), IS (Inception Score)
+        
+        #### 🚧 Προκλήσεις
+        
+        - **Lighting conditions**: Φωτισμός επηρεάζει ποιότητα
+        - **Occlusions**: Αντικείμενα κρυμμένα
+        - **Scale variance**: Αντικείμενα σε διαφορετικά μεγέθη
+        - **Real-time processing**: Χρειάζεται ταχύτητα
+        - **3D understanding**: Από 2D εικόνες
+        """)
+    
+    with st.expander('🤖 **Robotics** - Ρομποτική και Αυτονομία', expanded=False):
+        st.markdown("""
+        ### Τι είναι η Robotics με AI;
+        
+        Η **Robotics** συνδυάζει AI, μηχανική, και φυσική για τη δημιουργία ρομπότ που μπορούν 
+        να αλληλεπιδρούν με το φυσικό κόσμο και να εκτελούν εργασίες αυτόνομα.
+        
+        #### 🎯 Βασικά Πεδία AI στη Ρομποτική
+        
+        **1. Perception (Αντίληψη)**
+        - **Computer Vision**: Κάμερες για αναγνώριση αντικειμένων
+        - **Sensor Fusion**: Συνδυασμός δεδομένων από πολλαπλούς αισθητήρες
+        - **Depth Sensing**: LiDAR, RGB-D κάμερες
+        - **Object Recognition**: Τι υπάρχει στο περιβάλλον;
+        - **Scene Understanding**: Κατανόηση πλαισίου
+        
+        **2. Localization & Mapping (Εντοπισμός & Χαρτογράφηση)**
+        - **SLAM** (Simultaneous Localization and Mapping)
+          - Δημιουργία χάρτη ενώ το ρομπότ κινείται
+          - Εντοπισμός θέσης στον χάρτη
+        - **GPS Navigation**: Outdoor εντοπισμός
+        - **Visual Odometry**: Υπολογισμός κίνησης από εικόνες
+        - **Sensor-based Localization**: IMU, wheel encoders
+        
+        **3. Motion Planning (Σχεδιασμός Κίνησης)**
+        - **Path Planning**: Εύρεση διαδρομής από A σε B
+        - **Trajectory Optimization**: Βέλτιστη τροχιά
+        - **Obstacle Avoidance**: Αποφυγή εμποδίων
+        - **Algorithms**:
+          - A* (A-star): Graph search
+          - RRT (Rapidly-exploring Random Trees)
+          - Dijkstra
+          - Dynamic Window Approach
+        
+        **4. Control (Έλεγχος)**
+        - **PID Controllers**: Proportional-Integral-Derivative
+        - **Model Predictive Control (MPC)**
+        - **Adaptive Control**: Προσαρμογή σε αλλαγές
+        - **Reinforcement Learning**: Μάθηση optimal πολιτικής
+        
+        **5. Manipulation (Χειρισμός)**
+        - **Grasping**: Πιάσιμο αντικειμένων
+        - **Pick and Place**: Μεταφορά αντικειμένων
+        - **Inverse Kinematics**: Υπολογισμός joint angles
+        - **Force Control**: Έλεγχος δύναμης επαφής
+        
+        **6. Human-Robot Interaction (HRI)**
+        - **Speech Recognition**: Φωνητικές εντολές
+        - **Gesture Recognition**: Αναγνώριση χειρονομιών
+        - **Emotion Detection**: Ανίχνευση συναισθημάτων
+        - **Collaborative Robotics**: Cobots που δουλεύουν με ανθρώπους
+        
+        #### 🚗 Αυτόνομα Οχήματα (Autonomous Vehicles)
+        
+        **Επίπεδα Αυτονομίας:**
+        - **Level 0**: Καμία αυτοματοποίηση
+        - **Level 1**: Driver assistance (cruise control)
+        - **Level 2**: Partial automation (Tesla Autopilot)
+        - **Level 3**: Conditional automation
+        - **Level 4**: High automation (συγκεκριμένες συνθήκες)
+        - **Level 5**: Full automation (παντού)
+        
+        **Τεχνολογίες:**
+        - **Sensors**: Κάμερες, LiDAR, Radar, Ultrasonic
+        - **Perception**: Object detection, lane detection, traffic sign recognition
+        - **Prediction**: Πρόβλεψη συμπεριφοράς άλλων οχημάτων/πεζών
+        - **Planning**: Route planning, behavior planning
+        - **Control**: Steering, throttle, brakes
+        
+        **Εταιρείες:**
+        - Waymo (Google), Tesla, Cruise (GM), Argo AI, Zoox (Amazon)
+        
+        #### 🏭 Industrial Robotics (Βιομηχανικά Ρομπότ)
+        
+        **Τύποι:**
+        - **Robotic Arms**: Manipulation, assembly
+        - **AGVs** (Automated Guided Vehicles): Μεταφορά υλικών
+        - **Collaborative Robots (Cobots)**: Εργασία με ανθρώπους
+        - **Delta Robots**: Υψηλή ταχύτητα, pick-and-place
+        
+        **Εφαρμογές:**
+        - Συναρμολόγηση (Automotive industry)
+        - Welding, painting
+        - Packaging
+        - Quality inspection
+        - Material handling
+        
+        **AI Enhancements:**
+        - Computer Vision για inspection
+        - Reinforcement Learning για βελτιστοποίηση
+        - Predictive maintenance
+        
+        #### 🏠 Service Robotics (Ρομπότ Υπηρεσιών)
+        
+        **Household:**
+        - **Vacuum Cleaners**: Roomba, Roborock
+        - **Lawn Mowers**: Husqvarna, Worx
+        - **Companion Robots**: Pepper, Jibo
+        
+        **Healthcare:**
+        - **Surgical Robots**: Da Vinci Surgical System
+        - **Rehabilitation Robots**: Βοήθεια σε ασθενείς
+        - **Disinfection Robots**: UV-C για απολύμανση
+        - **Delivery Robots**: Φάρμακα, γεύματα σε νοσοκομεία
+        
+        **Hospitality:**
+        - Ρομπότ ρεσεψιόν σε ξενοδοχεία
+        - Delivery robots σε εστιατόρια
+        - Cleaning robots
+        
+        #### 🚁 Drones (UAVs - Unmanned Aerial Vehicles)
+        
+        **Εφαρμογές:**
+        - **Photography/Videography**: Aerial shots
+        - **Delivery**: Amazon Prime Air, Zipline (ιατρικά)
+        - **Agriculture**: Crop monitoring, spraying
+        - **Inspection**: Κτίρια, γέφυρες, πυλώνες
+        - **Search and Rescue**: Εύρεση αγνοουμένων
+        - **Military**: Surveillance, combat
+        
+        **AI Capabilities:**
+        - Autonomous flight
+        - Obstacle avoidance
+        - Object tracking
+        - Swarm intelligence (drone swarms)
+        
+        #### 🤝 Social Robots
+        
+        **Παραδείγματα:**
+        - **Pepper**: Humanoid robot για interaction
+        - **NAO**: Εκπαιδευτικό ρομπότ
+        - **Sophia**: Από Hanson Robotics
+        - **Paro**: Therapeutic seal robot
+        
+        **Capabilities:**
+        - Facial recognition
+        - Emotion detection
+        - Natural language interaction
+        - Educational content delivery
+        
+        #### 🧠 Key AI Techniques στη Ρομποτική
+        
+        **1. Reinforcement Learning**
+        - Μάθηση πολιτικών από trial-and-error
+        - Sim-to-real transfer
+        - Παραδείγματα: Grasping, locomotion
+        
+        **2. Imitation Learning**
+        - Μάθηση από demonstrations
+        - Learning from human experts
+        
+        **3. Multi-Agent Systems**
+        - Συντονισμός πολλαπλών ρομπότ
+        - Swarm robotics
+        
+        **4. Sim-to-Real**
+        - Training σε simulation
+        - Transfer σε πραγματικό κόσμο
+        - Domain randomization
+        
+        #### 🛠️ Platforms και Tools
+        
+        **Simulation:**
+        - **Gazebo**: Robot simulation
+        - **V-REP/CoppeliaSim**: Robot simulator
+        - **PyBullet**: Physics simulation
+        - **CARLA**: Autonomous driving simulator
+        - **AirSim**: Drone and vehicle simulator
+        
+        **Frameworks:**
+        - **ROS** (Robot Operating System): Middleware
+        - **ROS 2**: Next-gen ROS
+        - **OpenCV**: Computer vision
+        - **PCL**: Point Cloud Library (3D data)
+        
+        **Hardware:**
+        - **Raspberry Pi**: Low-cost computing
+        - **NVIDIA Jetson**: Edge AI computing
+        - **Arduino**: Microcontroller για actuators/sensors
+        
+        #### 🚧 Προκλήσεις
+        
+        - **Real-world Uncertainty**: Unpredictable περιβάλλοντα
+        - **Safety**: Ασφάλεια ανθρώπων
+        - **Generalization**: Λειτουργία σε διαφορετικά περιβάλλοντα
+        - **Power Consumption**: Battery life
+        - **Cost**: Ακριβά sensors και hardware
+        - **Ethics**: Αυτονομία και ευθύνη
+        
+        #### 🔮 Μέλλον της Ρομποτικής
+        
+        - **General-purpose Robots**: Ρομπότ που κάνουν πολλές εργασίες
+        - **Soft Robotics**: Ευέλικτα, ασφαλή υλικά
+        - **Bio-inspired Robotics**: Μίμηση φύσης
+        - **Nanorobots**: Ιατρικές εφαρμογές σε κυτταρικό επίπεδο
+        - **Space Exploration**: Ρομπότ για exploration άλλων πλανητών
+        """)
+    
+    st.markdown('---')
     
     st.markdown('---')
     section_title('1.2 Κύρια Δομικά Στοιχεία της Τεχνητής Νοημοσύνης')
