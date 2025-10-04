@@ -2896,18 +2896,93 @@ with tabs[4]:
             plt.close()
 
 with tabs[5]:
-    # Import chatbot module
-    from chatbot import create_chatbot_interface
+    # Import ΕΜΠΛΟΥΤΙΣΜΕΝΟ chatbot module με ΠΛΗΡΗ γνώση
+    try:
+        from chatbot_enriched import create_enriched_chatbot_interface
+        
+        section_title('🌟 AI Knowledge Assistant - Εμπλουτισμένη Έκδοση')
+        
+        st.markdown("""
+        ### Καλώς ήρθατε στον **Εμπλουτισμένο AI Knowledge Assistant**! 🤖✨
+        
+        Αυτός ο προηγμένος intelligent chatbot έχει:
+        - 📚 **Πρόσβαση στο ΠΛΗΡΕΣ εκπαιδευτικό υλικό** (957 σελίδες PDF)
+        - 🌐 **Internet access** σε Wikipedia, ArXiv, και curated AI resources
+        - 🧠 **Βαθιά κατανόηση** όλων των ενοτήτων (1.1-1.7)
+        - 💬 **Διαδραστική συνομιλία** με context awareness
+        
+        ### 🎯 Νέες Δυνατότητες:
     
-    section_title('AI Knowledge Assistant - Ρωτήστε με οτιδήποτε!')
-    
-    st.markdown("""
-    Καλώς ήρθατε στον **AI Knowledge Assistant**! 🤖
-    
-    Αυτός ο intelligent chatbot έχει πρόσβαση στο πλήρες εκπαιδευτικό υλικό και μπορεί να απαντήσει
-    σε ερωτήσεις σχετικά με την Τεχνητή Νοημοσύνη.
-    
-    ### 💡 Τι μπορεί να κάνει:
+        
+        - ✅ **Ολοκληρωμένες απαντήσεις** με παραδείγματα και use cases
+        - ✅ **Ιστορική προοπτική** της AI
+        - ✅ **Σύγκριση τεχνολογιών** (CNN vs RNN vs Transformers)
+        - ✅ **Ηθικά ζητήματα** και προκλήσεις
+        - ✅ **Πρακτικοί πόροι** (documentation, courses, papers)
+        
+        ### 📚 Θέματα που καλύπτει:
+        
+        **Θεωρία:**
+        - Ορισμός και τύποι AI (Narrow, General, Super)
+        - Βασικά δομικά στοιχεία (Δεδομένα, Αλγόριθμοι, Μοντέλα, Computing)
+        - Machine Learning (Supervised, Unsupervised, Reinforcement)
+        - Deep Learning (CNN, RNN, LSTM, Transformers)
+        - ChatGPT και Large Language Models
+        - Generative AI (GANs, VAEs, Diffusion Models)
+        
+        **Πράξη:**
+        - Εφαρμογές σε Υγεία, Εκπαίδευση, Finance, Marketing
+        - Python & ML frameworks (TensorFlow, PyTorch)
+        - Google Colab notebooks
+        - Πρακτικά παραδείγματα
+        
+        **Ηθική:**
+        - Bias & Fairness
+        - Privacy & Security (GDPR)
+        - Transparency & Explainability
+        - Job displacement & Future of work
+        
+        ---
+        """)
+        
+        # Create ENRICHED chatbot interface
+        create_enriched_chatbot_interface()
+        
+        st.markdown("---")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            st.success("""
+            ✅ **Πλεονεκτήματα:**
+            - Πρόσβαση σε 957 σελίδες εκπαιδευτικού υλικού
+            - Online resources από αξιόπιστες πηγές
+            - Διαδραστική μάθηση
+            - Άμεσες απαντήσεις
+            """)
+        with col2:
+            st.info("""
+            💡 **Tip**: 
+            Κάντε συγκεκριμένες ερωτήσεις για καλύτερα αποτελέσματα!
+            
+            Π.χ. "Εξήγησε την αρχιτεκτονική Transformer" 
+            αντί για "Πες μου για AI"
+            """)
+        
+    except ImportError:
+        # Fallback to old chatbot
+        from chatbot import create_chatbot_interface
+        
+        section_title('AI Knowledge Assistant - Ρωτήστε με οτιδήποτε!')
+        
+        st.warning("⚠️ Το εμπλουτισμένο chatbot δεν είναι διαθέσιμο. Χρήση βασικής έκδοσης...")
+        
+        st.markdown("""
+        Καλώς ήρθατε στον **AI Knowledge Assistant**! 🤖
+        
+        Αυτός ο intelligent chatbot έχει πρόσβαση στο πλήρες εκπαιδευτικό υλικό και μπορεί να απαντήσει
+        σε ερωτήσεις σχετικά με την Τεχνητή Νοημοσύνη.
+        
+        ### 💡 Τι μπορεί να κάνει:
     
     - ✅ Απαντά σε ερωτήσεις για AI concepts
     - ✅ Εξηγεί τεχνικούς όρους με παραδείγματα

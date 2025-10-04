@@ -1,0 +1,80 @@
+═══════════════════════════════════════════════════════════════
+                   📁 ΑΡΧΕΙΑ ΕΦΑΡΜΟΓΗΣ
+═══════════════════════════════════════════════════════════════
+
+🔵 ΚΥΡΙΑ ΑΡΧΕΙΑ:
+   ai_training_app.py (138 KB)        Main application
+   chatbot.py (68 KB)                 Original chatbot
+   chatbot_enriched.py (35 KB)        ⭐ NEW - Enhanced chatbot
+   extract_pdf.py (643 B)             PDF extractor
+
+🟢 DOCUMENTATION:
+   README.md (8 KB)                   Project overview
+   CHANGELOG.md (11 KB)               Version history
+   CHATBOT_DOCS.md (10 KB)            Original chatbot docs
+   CHATBOT_ENRICHED_GUIDE.md (15 KB) ⭐ NEW - Full chatbot guide
+   CHATBOT_IMPLEMENTATION_SUMMARY.md (12 KB) ⭐ NEW - Technical details
+   COLAB_NOTEBOOKS.md (7 KB)          Colab integration
+   INTERNET_ACCESS_DOCS.md (10 KB)   Internet features
+   ML_ENRICHMENT_SUMMARY.md (14 KB)  ML enhancements
+   FINAL_SUMMARY.md (10 KB)          ⭐ NEW - Quick overview
+   WORK_SUMMARY.txt (5 KB)           ⭐ NEW - Work summary
+   FINAL_SUMMARY_VISUAL.txt (8 KB)  ⭐ NEW - Visual summary
+   README.txt                         Setup instructions
+
+🟡 DATA:
+   pdf_content.txt (957 pages)        Educational content
+   sample_data.csv                    Sample dataset
+   Εφαρμογές τεχνητής νοημοσύνης.pdf  Original PDF
+
+🟣 CONFIG:
+   requirements.txt                   Python dependencies
+   .gitignore                         Git ignore rules
+
+🔴 BACKUP:
+   chatbot_backup.py (68 KB)         ⭐ NEW - Original backup
+
+═══════════════════════════════════════════════════════════════
+                   📚 ΤΙ ΝΑ ΔΙΑΒΑΣΕΤΕ
+═══════════════════════════════════════════════════════════════
+
+🎯 QUICK START:
+   1. FINAL_SUMMARY.md                Overview και οδηγίες
+   2. WORK_SUMMARY.txt                Τι έγινε (summary)
+   3. FINAL_SUMMARY_VISUAL.txt        Visual presentation
+
+📖 FULL DOCUMENTATION:
+   1. CHATBOT_ENRICHED_GUIDE.md       Πλήρης οδηγός χρήσης
+   2. CHATBOT_IMPLEMENTATION_SUMMARY  Τεχνικές λεπτομέρειες
+   3. README.md                        Project overview
+
+🔧 TECHNICAL:
+   1. CHATBOT_DOCS.md                 Original chatbot
+   2. INTERNET_ACCESS_DOCS.md         Internet integration
+   3. ML_ENRICHMENT_SUMMARY.md        ML features
+   4. COLAB_NOTEBOOKS.md              Colab integration
+
+═══════════════════════════════════════════════════════════════
+                   🚀 QUICK START GUIDE
+═══════════════════════════════════════════════════════════════
+
+ΒΗΜΑ 1: Εγκατάσταση Dependencies
+   pip install -r requirements.txt
+
+ΒΗΜΑ 2: Εκκίνηση Εφαρμογής
+   python -m streamlit run ai_training_app.py
+
+ΒΗΜΑ 3: Άνοιγμα στο Browser
+   http://localhost:8501
+
+ΒΗΜΑ 4: Πλοήγηση
+   Go to tab: 🤖 AI Chatbot
+
+ΒΗΜΑ 5: Χρήση
+   Ρωτήστε οτιδήποτε για AI!
+
+═══════════════════════════════════════════════════════════════
+
+🎉 ΟΛΑ ΕΤΟΙΜΑ! ΚΑΛΗ ΕΞΕΡΕΥΝΗΣΗ! 🚀
+
+═══════════════════════════════════════════════════════════════
