@@ -11,6 +11,7 @@
 ### 📚 Πλήρες Θεωρητικό Υλικό
 - **Ενότητα 1.1**: Εισαγωγή στην AI - Ορισμοί και Βασικές Έννοιες
 - **Ενότητα 1.2**: Κύρια Δομικά Στοιχεία (Δεδομένα, Αλγόριθμοι, Μοντέλα, Υποδομές)
+  - ✨ **ΝΕΟ**: Διαδραστικά concept explainers για κάθε στοιχείο!
 - **Ενότητα 1.3**: Ιστορικά Επιτεύγματα (1950-2022)
 - **Ενότητα 1.4**: Εφαρμογές AI σε Διάφορους Τομείς
 - **Ενότητα 1.5**: Βασικές Αρχές και Ηθική AI
@@ -24,6 +25,21 @@
 - 💬 **NLP**: Sentiment Analysis, Translation, Text Generation
 - 👁️ **Computer Vision**: Object Detection, Segmentation, Face Recognition
 - 🤖 **Robotics**: Αυτόνομα οχήματα, Industrial Robots, Drones
+
+### ℹ️ Διαδραστικά Concept Explainers ⭐ **ΝΕΟ!**
+Κάντε κλικ σε οποιονδήποτε όρο για να δείτε:
+- 📖 Αναλυτικό ορισμό
+- 🔍 Τεχνικές λεπτομέρειες
+- 💡 Πρακτικά παραδείγματα
+- ⚙️ Πότε και πώς χρησιμοποιείται
+
+Παραδείγματα explainers:
+- Linear Regression
+- R² Score
+- Mean Absolute Error
+- Overfitting/Underfitting
+- GPU vs TPU
+- Και πολλά άλλα!
 
 ### 🐍 Πρακτικά Παραδείγματα Python
 1. **Logistic Regression** - Επιβλεπόμενη μάθηση με interactive sliders
@@ -49,6 +65,23 @@
 2. **Image Classification Simulation** - Training visualization
 3. **Sentiment Analysis** - Text sentiment detector
 4. **Recommendation System** - Movie recommender
+
+### 📓 Google Colab Integration ⭐ **ΝΕΟ!**
+Hands-on εκπαίδευση με πραγματικό κώδικα:
+- ✅ Δωρεάν GPU/TPU access
+- ✅ Προ-εγκατεστημένες βιβλιοθήκες
+- ✅ Βήμα-προς-βήμα tutorials
+- ✅ Ready-to-use notebooks
+
+**Περιλαμβάνονται 6+ Colab notebooks:**
+- Linear Regression & Model Training
+- K-Means Clustering
+- Decision Trees & Random Forests
+- Neural Networks με TensorFlow
+- CNN για Image Classification
+- NLP με Transformers (BERT)
+
+Δείτε το [COLAB_NOTEBOOKS.md](COLAB_NOTEBOOKS.md) για πλήρεις οδηγίες!
 
 ## 🚀 Εγκατάσταση
 
