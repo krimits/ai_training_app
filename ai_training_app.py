@@ -11,6 +11,31 @@ import time
 
 st.set_page_config(layout='wide', page_title='AI Training — Πλήρης Εκπαίδευση', page_icon='🤖')
 
+# Helper function για διαδραστικά concept explanations
+def concept_explainer(term, definition, details="", examples=""):
+    """Δημιουργεί ένα διαδραστικό expander για εξήγηση όρων"""
+    with st.expander(f"ℹ️ **{term}** - Κάντε κλικ για περισσότερα"):
+        st.markdown(f"**📖 Ορισμός:**\n{definition}")
+        if details:
+            st.markdown(f"\n**🔍 Λεπτομέρειες:**\n{details}")
+        if examples:
+            st.markdown(f"\n**💡 Παραδείγματα:**\n{examples}")
+
+# Helper function για Google Colab links
+def colab_button(notebook_name, colab_url, description=""):
+    """Δημιουργεί κουμπί για άνοιγμα Google Colab notebook"""
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown(f"**📓 {notebook_name}**")
+        if description:
+            st.caption(description)
+    with col2:
+        st.markdown(f"""
+        <a href="{colab_url}" target="_blank">
+            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+        </a>
+        """, unsafe_allow_html=True)
+
 def section_title(t): 
     st.markdown(f'## 📌 {t}')
 
@@ -763,39 +788,196 @@ with tabs[0]:
     st.markdown('---')
     section_title('1.2 Κύρια Δομικά Στοιχεία της Τεχνητής Νοημοσύνης')
     
+    st.markdown("Κάντε κλικ σε κάθε στοιχείο για να μάθετε περισσότερα:")
+    
     col1, col2, col3, col4 = st.columns(4)
+    
     with col1:
-        st.markdown("""
-        ### 📊 Δεδομένα
-        Τα δεδομένα είναι η βάση κάθε AI συστήματος
-        - Big Data
-        - Ποιότητα δεδομένων
-        - Προεπεξεργασία
-        """)
+        st.markdown("### 📊 Δεδομένα")
+        concept_explainer(
+            "Δεδομένα (Data)",
+            "Τα δεδομένα είναι η **θεμελιώδης βάση** κάθε AI συστήματος. Χωρίς ποιοτικά δεδομένα, ακόμα και ο καλύτερος αλγόριθμος θα αποτύχει.",
+            """
+            **Τύποι Δεδομένων:**
+            - **Structured Data**: Πίνακες, βάσεις δεδομένων (π.χ. CSV, SQL)
+            - **Unstructured Data**: Κείμενο, εικόνες, βίντεο, ήχος
+            - **Semi-structured Data**: JSON, XML
+            
+            **Ποιότητα Δεδομένων:**
+            - **Accuracy**: Ακρίβεια και ορθότητα
+            - **Completeness**: Πληρότητα (χωρίς missing values)
+            - **Consistency**: Συνέπεια μεταξύ διαφορετικών πηγών
+            - **Timeliness**: Επικαιρότητα
+            - **Relevance**: Σχετικότητα με το πρόβλημα
+            
+            **Data Pipeline:**
+            1. **Collection**: Συλλογή από πηγές
+            2. **Cleaning**: Καθαρισμός (αφαίρεση duplicates, outliers)
+            3. **Preprocessing**: Normalization, transformation
+            4. **Augmentation**: Τεχνητή αύξηση dataset
+            5. **Storage**: Αποθήκευση (Data Lakes, Warehouses)
+            """,
+            """
+            - **Netflix**: 100+ million χρήστες, δισεκατομμύρια interactions
+            - **Tesla**: Εκατομμύρια miles από αυτόνομη οδήγηση
+            - **Google**: Τρισεκατομμύρια αναζητήσεις ετησίως
+            - **Healthcare**: Ιατρικές εικόνες, patient records
+            """
+        )
+    
     with col2:
-        st.markdown("""
-        ### ⚙️ Αλγόριθμοι
-        Μαθηματικές τεχνικές και μεθοδολογίες
-        - Supervised Learning
-        - Unsupervised Learning
-        - Reinforcement Learning
-        """)
+        st.markdown("### ⚙️ Αλγόριθμοι")
+        concept_explainer(
+            "Αλγόριθμοι (Algorithms)",
+            "Οι αλγόριθμοι είναι οι **μαθηματικές μέθοδοι** που μετατρέπουν τα δεδομένα σε χρήσιμες προβλέψεις και insights.",
+            """
+            **Κατηγορίες Αλγορίθμων:**
+            
+            **1. Supervised Learning:**
+            - **Regression**: Linear, Polynomial, Ridge, Lasso
+            - **Classification**: Logistic Regression, SVM, Decision Trees, Random Forest, XGBoost
+            - **Neural Networks**: Feedforward, CNN, RNN
+            
+            **2. Unsupervised Learning:**
+            - **Clustering**: K-Means, DBSCAN, Hierarchical
+            - **Dimensionality Reduction**: PCA, t-SNE, UMAP
+            - **Anomaly Detection**: Isolation Forest, One-Class SVM
+            
+            **3. Reinforcement Learning:**
+            - **Q-Learning**: Value-based methods
+            - **Policy Gradients**: REINFORCE, PPO, A3C
+            - **Deep RL**: DQN, DDPG, SAC
+            
+            **Επιλογή Αλγορίθμου:**
+            - Τύπος προβλήματος (classification, regression, clustering)
+            - Μέγεθος dataset
+            - Interpretability requirements
+            - Computational resources
+            - Real-time constraints
+            """,
+            """
+            - **Linear Regression**: Πρόβλεψη τιμών ακινήτων
+            - **Random Forest**: Credit scoring
+            - **CNN**: Face recognition
+            - **LSTM**: Stock price prediction
+            - **Q-Learning**: Game playing AI
+            """
+        )
+    
     with col3:
-        st.markdown("""
-        ### 🎯 Μοντέλα
-        Εκπαιδευμένα συστήματα
-        - Neural Networks
-        - Decision Trees
-        - SVM
-        """)
+        st.markdown("### 🎯 Μοντέλα")
+        concept_explainer(
+            "Μοντέλα (Models)",
+            "Τα μοντέλα είναι τα **εκπαιδευμένα συστήματα** που προκύπτουν από την εφαρμογή αλγορίθμων σε δεδομένα.",
+            """
+            **Lifecycle Μοντέλου:**
+            
+            **1. Training Phase:**
+            - Feature engineering
+            - Model selection
+            - Hyperparameter tuning
+            - Cross-validation
+            - Training data split (train/validation/test)
+            
+            **2. Evaluation Phase:**
+            - Performance metrics (Accuracy, Precision, Recall, F1, AUC)
+            - Confusion matrix analysis
+            - Learning curves
+            - Error analysis
+            
+            **3. Deployment Phase:**
+            - Model serialization (pickle, ONNX, TensorFlow SavedModel)
+            - API creation (REST, gRPC)
+            - Containerization (Docker)
+            - Cloud deployment (AWS SageMaker, Azure ML, Google Vertex AI)
+            
+            **4. Monitoring Phase:**
+            - Performance tracking
+            - Data drift detection
+            - Model retraining triggers
+            - A/B testing
+            
+            **Model Types:**
+            - **White-box**: Interpretable (Linear models, Decision Trees)
+            - **Black-box**: High performance (Deep Neural Networks, Ensemble methods)
+            - **Gray-box**: Balanced (XGBoost με SHAP values)
+            """,
+            """
+            - **GPT-4**: 175B+ parameters, text generation
+            - **YOLOv8**: Real-time object detection
+            - **BERT**: Language understanding
+            - **AlphaFold**: Protein structure prediction
+            - **Stable Diffusion**: Image generation
+            """
+        )
+    
     with col4:
-        st.markdown("""
-        ### 💻 Υποδομές
-        Υπολογιστική ισχύς
-        - GPU/TPU
-        - Cloud Computing
-        - Frameworks
-        """)
+        st.markdown("### 💻 Υποδομές")
+        concept_explainer(
+            "Υποδομές (Infrastructure)",
+            "Η υποδομή περιλαμβάνει το **hardware και software** που απαιτούνται για training και deployment AI μοντέλων.",
+            """
+            **Hardware:**
+            
+            **1. CPUs (Central Processing Units)**:
+            - General-purpose computing
+            - Preprocessing, data loading
+            - Inference για απλά μοντέλα
+            
+            **2. GPUs (Graphics Processing Units)**:
+            - **NVIDIA**: A100, V100, RTX 4090
+            - Parallel processing (1000s of cores)
+            - Deep learning training
+            - Speedup: 10-100x vs CPU
+            
+            **3. TPUs (Tensor Processing Units)**:
+            - Google's custom AI chips
+            - Optimized για matrix operations
+            - Used in Google Cloud
+            - Speedup: 15-30x vs GPUs
+            
+            **4. NPUs (Neural Processing Units)**:
+            - Mobile devices (Apple Neural Engine, Qualcomm Hexagon)
+            - Edge computing
+            - Low power consumption
+            
+            **Software:**
+            
+            **Frameworks:**
+            - TensorFlow, PyTorch, JAX
+            - Keras, MXNet, PaddlePaddle
+            
+            **Cloud Platforms:**
+            - **AWS**: SageMaker, EC2 P4d instances
+            - **Google Cloud**: Vertex AI, TPU pods
+            - **Azure**: Machine Learning, GPU VMs
+            - **Specialized**: Lambda Labs, Paperspace, Vast.ai
+            
+            **MLOps Tools:**
+            - **Experiment Tracking**: MLflow, Weights & Biases, Neptune
+            - **Model Versioning**: DVC, Git LFS
+            - **Deployment**: Docker, Kubernetes, KubeFlow
+            - **Monitoring**: Prometheus, Grafana, Evidently AI
+            
+            **Storage:**
+            - **S3, Google Cloud Storage**: Data lakes
+            - **Databases**: PostgreSQL, MongoDB, Elasticsearch
+            - **Feature Stores**: Feast, Tecton
+            """,
+            """
+            **Κόστος Training:**
+            - **GPT-3 Training**: ~$4.6M (estimated)
+            - **Stable Diffusion**: ~$600K
+            - **BERT-base**: ~$7K
+            
+            **Cloud Options:**
+            - **Google Colab**: Free GPU/TPU για εκπαίδευση
+            - **Kaggle Kernels**: Free GPU
+            - **AWS Free Tier**: Limited credits
+            """
+        )
+    
+    st.markdown('---')
     
     st.markdown('---')
     section_title('1.3 Βασικά Ιστορικά Επιτεύγματα στο Χώρο της Τεχνητής Νοημοσύνης')
@@ -1654,13 +1836,84 @@ with tabs[4]:
     
     st.markdown("""
     Εδώ μπορείτε να πειραματιστείτε με πραγματικά προβλήματα και να εφαρμόσετε τις γνώσεις σας!
+    
+    💡 **Tip**: Κάντε κλικ στο "Open in Colab" για να δοκιμάσετε hands-on εκπαίδευση με πραγματικό κώδικα!
     """)
+    
+    # Colab Notebooks Section
+    st.markdown('---')
+    st.markdown('### 📓 Google Colab Notebooks - Hands-On Εκπαίδευση')
+    
+    st.info("""
+    🎓 **Τα Google Colab notebooks προσφέρουν:**
+    - Δωρεάν GPU/TPU για εκπαίδευση μοντέλων
+    - Προ-εγκατεστημένες βιβλιοθήκες (TensorFlow, PyTorch, scikit-learn)
+    - Βήμα-προς-βήμα οδηγίες με εξηγήσεις
+    - Έτοιμο κώδικα που μπορείτε να τροποποιήσετε
+    - Αποθήκευση στο Google Drive σας
+    """)
+    
+    col_c1, col_c2 = st.columns(2)
+    
+    with col_c1:
+        st.markdown("#### 🚀 Beginner Level")
+        
+        colab_button(
+            "Linear Regression - Βασικά",
+            "https://colab.research.google.com/github/ageron/handson-ml2/blob/master/04_training_linear_models.ipynb",
+            "Μάθετε Linear Regression από το μηδέν με scikit-learn"
+        )
+        
+        st.markdown("---")
+        
+        colab_button(
+            "K-Means Clustering",
+            "https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.11-K-Means.ipynb",
+            "Unsupervised learning με K-Means algorithm"
+        )
+        
+        st.markdown("---")
+        
+        colab_button(
+            "Decision Trees & Random Forests",
+            "https://colab.research.google.com/github/ageron/handson-ml2/blob/master/06_decision_trees.ipynb",
+            "Ensemble methods για classification και regression"
+        )
+    
+    with col_c2:
+        st.markdown("#### 🔥 Advanced Level")
+        
+        colab_button(
+            "Neural Networks με TensorFlow",
+            "https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb",
+            "Δημιουργήστε το πρώτο σας Deep Learning μοντέλο"
+        )
+        
+        st.markdown("---")
+        
+        colab_button(
+            "CNN για Image Classification",
+            "https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/images/cnn.ipynb",
+            "Convolutional Neural Networks για ταξινόμηση εικόνων"
+        )
+        
+        st.markdown("---")
+        
+        colab_button(
+            "NLP με Transformers",
+            "https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb",
+            "Sentiment analysis με pre-trained BERT"
+        )
+    
+    st.markdown('---')
+    st.markdown('### 🎮 Διαδραστικές Εξασκήσεις (In-App)')
     
     exercise_choice = st.selectbox('🎯 Επιλέξτε Άσκηση:', [
         'Πρόβλεψη Τιμών (Regression)',
         'Ταξινόμηση Εικόνων (Image Classification Simulation)',
         'Sentiment Analysis Simulator',
-        'Δημιουργία Συστήματος Συστάσεων'
+        'Δημιουργία Συστήματος Συστάσεων',
+        '🆕 Custom ML Pipeline Builder'
     ])
     
     if exercise_choice == 'Πρόβλεψη Τιμών (Regression)':
@@ -1670,6 +1923,45 @@ with tabs[4]:
         Σε αυτή την άσκηση θα δημιουργήσετε ένα μοντέλο που προβλέπει την τιμή ενός ακινήτου 
         βάσει των χαρακτηριστικών του.
         """)
+        
+        # Add interactive concept explainer
+        concept_explainer(
+            "Linear Regression",
+            "Η **Linear Regression** είναι ένας αλγόριθμος supervised learning που προβλέπει μια συνεχή τιμή (continuous value).",
+            """
+            **Μαθηματική Φόρμουλα:**
+            ```
+            y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
+            ```
+            
+            Όπου:
+            - y: Target variable (τιμή)
+            - x: Features (μέγεθος, δωμάτια, κλπ.)
+            - β: Coefficients (παράμετροι που μαθαίνει το μοντέλο)
+            - ε: Error term
+            
+            **Πώς λειτουργεί:**
+            1. Το μοντέλο προσπαθεί να βρει την "καλύτερη γραμμή" που ταιριάζει στα δεδομένα
+            2. "Καλύτερη" σημαίνει ελαχιστοποίηση του Mean Squared Error (MSE)
+            3. Χρησιμοποιεί Gradient Descent ή Normal Equation
+            
+            **Πλεονεκτήματα:**
+            - Απλό και γρήγορο
+            - Interpretable (μπορούμε να δούμε τις παραμέτρους)
+            - Καλό baseline μοντέλο
+            
+            **Μειονεκτήματα:**
+            - Υποθέτει γραμμική σχέση
+            - Sensitive σε outliers
+            - Δεν μπορεί να πιάσει πολύπλοκα patterns
+            """,
+            """
+            - Πρόβλεψη τιμών ακινήτων
+            - Sales forecasting
+            - Stock price trends (short-term)
+            - Energy consumption prediction
+            """
+        )
         
         # Simulate housing data
         np.random.seed(42)
@@ -1689,7 +1981,7 @@ with tabs[4]:
             'Τιμή (€)': price
         })
         
-        st.dataframe(df_houses.head(10), use_container_width=True)
+        st.dataframe(df_houses.head(10), width=None)
         
         if st.button('🚀 Εκπαίδευση Μοντέλου Πρόβλεψης'):
             from sklearn.linear_model import LinearRegression
@@ -1710,8 +2002,47 @@ with tabs[4]:
             col_h1, col_h2 = st.columns(2)
             with col_h1:
                 st.metric('📊 R² Score', f'{r2:.3f}')
+                concept_explainer(
+                    "R² Score (Coefficient of Determination)",
+                    "Το R² μετρά πόσο καλά το μοντέλο εξηγεί τη διακύμανση των δεδομένων.",
+                    """
+                    **Τιμές R²:**
+                    - **1.0**: Τέλεια πρόβλεψη
+                    - **0.8-0.9**: Πολύ καλό μοντέλο
+                    - **0.6-0.8**: Καλό μοντέλο
+                    - **< 0.5**: Αδύναμο μοντέλο
+                    - **< 0**: Χειρότερο από απλό mean
+                    
+                    **Φόρμουλα:**
+                    ```
+                    R² = 1 - (Σ(y_actual - y_pred)²) / (Σ(y_actual - y_mean)²)
+                    ```
+                    """,
+                    f"Το δικό σας μοντέλο με R²={r2:.3f} θεωρείται {'εξαιρετικό!' if r2>0.9 else 'πολύ καλό!' if r2>0.7 else 'καλό' if r2>0.5 else 'αρκετό για βελτίωση'}"
+                )
             with col_h2:
                 st.metric('💰 Mean Absolute Error', f'{mae:,.0f} €')
+                concept_explainer(
+                    "Mean Absolute Error (MAE)",
+                    "Το MAE είναι ο μέσος απόλυτος λάθος των προβλέψεων σε πραγματικές μονάδες.",
+                    """
+                    **Τι σημαίνει:**
+                    - Κατά μέσο όρο, οι προβλέψεις μας απέχουν MAE € από την πραγματική τιμή
+                    - Πιο εύκολο να ερμηνευτεί από MSE (Mean Squared Error)
+                    - Δεν τιμωρεί τα μεγάλα λάθη τόσο όσο το MSE
+                    
+                    **Φόρμουλα:**
+                    ```
+                    MAE = (1/n) * Σ|y_actual - y_pred|
+                    ```
+                    
+                    **Πότε είναι καλό:**
+                    - Όσο μικρότερο τόσο καλύτερα
+                    - Συγκρίνετέ το με το range των τιμών
+                    - Αν MAE << std(y), είναι πολύ καλό
+                    """,
+                    f"Με μέση τιμή {y_houses.mean():,.0f}€ και MAE {mae:,.0f}€, το σφάλμα είναι {(mae/y_houses.mean()*100):.1f}% της μέσης τιμής"
+                )
             
             fig_pred, ax_pred = plt.subplots(figsize=(10, 6))
             ax_pred.scatter(y_test_h, y_pred_h, alpha=0.6, edgecolors='k')
