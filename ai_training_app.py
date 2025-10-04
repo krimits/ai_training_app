@@ -102,27 +102,692 @@ with tabs[0]:
         Το **Machine Learning** είναι ένας κλάδος της AI που επιτρέπει στους υπολογιστές να μαθαίνουν από δεδομένα 
         χωρίς να προγραμματίζονται ρητά για κάθε εργασία.
         
-        #### 📚 Βασικές Έννοιες
+        ---
+        """)
         
-        **1. Τύποι Μάθησης:**
-        - **Supervised Learning** (Επιβλεπόμενη Μάθηση)
-          - Το μοντέλο εκπαιδεύεται με labeled data
-          - Στόχος: Πρόβλεψη outcomes
-          - Παραδείγματα: Classification (ταξινόμηση), Regression (παλινδρόμηση)
-          - Αλγόριθμοι: Linear Regression, Logistic Regression, Decision Trees, SVM, Random Forests
+        st.markdown("#### 📚 Τύποι Μάθησης")
+        st.markdown("*Κάντε κλικ σε κάθε τύπο για αναλυτική εξήγηση:*")
         
-        - **Unsupervised Learning** (Μη Επιβλεπόμενη Μάθηση)
-          - Ανακάλυψη patterns σε unlabeled data
-          - Στόχος: Ομαδοποίηση και μείωση διαστάσεων
-          - Παραδείγματα: Clustering, Association Rules
-          - Αλγόριθμοι: K-Means, Hierarchical Clustering, PCA, Autoencoders
+        # SUPERVISED LEARNING
+        concept_explainer(
+            "🎯 Supervised Learning (Επιβλεπόμενη Μάθηση)",
+            """
+            Η **Supervised Learning** είναι η πιο συνηθισμένη κατηγορία ML όπου το μοντέλο μαθαίνει από 
+            **labeled data** (δεδομένα με ετικέτες). Κάθε παράδειγμα εκπαίδευσης έχει input features και 
+            το αντίστοιχο output (label/target).
+            """,
+            """
+            ### 🎓 Πώς Λειτουργεί:
+            
+            **Βήμα 1**: Παρέχουμε στο μοντέλο ζεύγη (input, output)
+            ```
+            Παράδειγμα: (Σπίτι 100τμ με 3 δωμάτια) → 200,000€
+            ```
+            
+            **Βήμα 2**: Το μοντέλο μαθαίνει τη σχέση input-output
+            
+            **Βήμα 3**: Προβλέπει outputs για νέα, άγνωστα inputs
+            
+            ---
+            
+            ### 📊 Δύο Κύριοι Τύποι:
+            
+            #### 1️⃣ **Classification (Ταξινόμηση)**
+            - **Στόχος**: Πρόβλεψη διακριτής κατηγορίας
+            - **Output**: Κατηγορία/Class (π.χ. "Σκύλος", "Γάτα")
+            - **Παραδείγματα**:
+              - Email spam detection (Spam/Not Spam)
+              - Medical diagnosis (Υγιής/Άρρωστος)
+              - Sentiment analysis (Positive/Negative/Neutral)
+              - Face recognition (Πρόσωπο A, B, C...)
+            
+            **Αλγόριθμοι Classification:**
+            - **Logistic Regression**: Για binary classification
+            - **Decision Trees**: Tree-based decisions
+            - **Random Forest**: Ensemble of trees
+            - **Support Vector Machines (SVM)**: Finds optimal boundary
+            - **Neural Networks**: Multi-layer learning
+            - **Naive Bayes**: Probabilistic classifier
+            - **K-Nearest Neighbors (KNN)**: Distance-based
+            
+            #### 2️⃣ **Regression (Παλινδρόμηση)**
+            - **Στόχος**: Πρόβλεψη συνεχούς αριθμητικής τιμής
+            - **Output**: Αριθμός (π.χ. 250,000€, 25 χρονών)
+            - **Παραδείγματα**:
+              - House price prediction
+              - Stock market forecasting
+              - Temperature prediction
+              - Sales forecasting
+              - Age estimation from photos
+            
+            **Αλγόριθμοι Regression:**
+            - **Linear Regression**: Γραμμική σχέση
+            - **Polynomial Regression**: Μη-γραμμική σχέση
+            - **Ridge/Lasso Regression**: Με regularization
+            - **Decision Tree Regression**: Tree-based
+            - **Random Forest Regression**: Ensemble
+            - **Support Vector Regression (SVR)**
+            - **Neural Network Regression**
+            
+            ---
+            
+            ### ⚙️ Βασικά Στοιχεία:
+            
+            **Training Data (Εκπαιδευτικά Δεδομένα):**
+            - X (features/inputs): Χαρακτηριστικά
+            - y (labels/targets): Στόχοι/Ετικέτες
+            - Παράδειγμα: X = [μέγεθος, δωμάτια, τοποθεσία], y = [τιμή]
+            
+            **Loss Function (Συνάρτηση Κόστους):**
+            - Μετρά πόσο κοντά είναι οι προβλέψεις στην πραγματικότητα
+            - Classification: Cross-Entropy Loss
+            - Regression: Mean Squared Error (MSE)
+            
+            **Optimization (Βελτιστοποίηση):**
+            - **Gradient Descent**: Βρίσκει minimum της loss function
+            - Ενημερώνει παραμέτρους για καλύτερες προβλέψεις
+            
+            ---
+            
+            ### 📈 Μετρικές Αξιολόγησης:
+            
+            **Για Classification:**
+            - **Accuracy**: Ποσοστό σωστών προβλέψεων
+            - **Precision**: Από όσα προβλέψαμε θετικά, πόσα ήταν σωστά
+            - **Recall**: Από όσα είναι θετικά, πόσα βρήκαμε
+            - **F1-Score**: Αρμονικός μέσος Precision & Recall
+            - **Confusion Matrix**: Πίνακας σωστών/λάθος προβλέψεων
+            - **ROC-AUC**: Area Under the ROC Curve
+            
+            **Για Regression:**
+            - **MAE** (Mean Absolute Error): Μέσο απόλυτο λάθος
+            - **MSE** (Mean Squared Error): Μέσο τετραγωνικό λάθος
+            - **RMSE** (Root MSE): Ρίζα του MSE
+            - **R² Score**: Πόσο καλά εξηγείται η διακύμανση
+            
+            ---
+            
+            ### 💼 Real-World Applications:
+            
+            **Business:**
+            - Customer churn prediction
+            - Lead scoring
+            - Price optimization
+            - Demand forecasting
+            
+            **Healthcare:**
+            - Disease diagnosis από symptoms
+            - Patient risk stratification
+            - Drug response prediction
+            
+            **Finance:**
+            - Credit scoring
+            - Fraud detection
+            - Stock price prediction
+            - Loan default prediction
+            
+            **E-commerce:**
+            - Product recommendations
+            - Dynamic pricing
+            - Inventory management
+            
+            ---
+            
+            ### ⚠️ Προκλήσεις:
+            
+            - **Labeled Data Requirement**: Χρειάζεται πολλά labeled examples (ακριβό!)
+            - **Overfitting**: Μαθαίνει το noise αντί για patterns
+            - **Class Imbalance**: Άνισες κατηγορίες (π.χ. 99% κανονικά, 1% απάτη)
+            - **Feature Engineering**: Επιλογή σωστών features είναι κρίσιμη
+            """,
+            """
+            **Πότε να χρησιμοποιήσετε:**
+            - ✅ Έχετε labeled data
+            - ✅ Ξέρετε τι θέλετε να προβλέψετε (clear target)
+            - ✅ Θέλετε interpretable results
+            - ✅ Έχετε αρκετά δεδομένα για training
+            
+            **Παράδειγμα Code (Python):**
+            ```python
+            from sklearn.model_selection import train_test_split
+            from sklearn.ensemble import RandomForestClassifier
+            
+            # Split data
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+            
+            # Train model
+            model = RandomForestClassifier(n_estimators=100)
+            model.fit(X_train, y_train)
+            
+            # Predict
+            predictions = model.predict(X_test)
+            accuracy = model.score(X_test, y_test)
+            ```
+            """
+        )
         
-        - **Reinforcement Learning** (Ενισχυτική Μάθηση)
-          - Μάθηση μέσω interaction με περιβάλλον
-          - Στόχος: Μεγιστοποίηση rewards
-          - Παραδείγματα: Gaming AI, Robotics, Αυτόνομα οχήματα
-          - Αλγόριθμοι: Q-Learning, Deep Q-Networks (DQN), Policy Gradients
+        # UNSUPERVISED LEARNING
+        concept_explainer(
+            "🔍 Unsupervised Learning (Μη Επιβλεπόμενη Μάθηση)",
+            """
+            Η **Unsupervised Learning** μαθαίνει από **unlabeled data** (χωρίς ετικέτες). Το μοντέλο 
+            προσπαθεί να ανακαλύψει κρυφά patterns, δομές και σχέσεις στα δεδομένα αυτόνομα.
+            """,
+            """
+            ### 🎓 Πώς Λειτουργεί:
+            
+            **Δεν έχουμε labels** - Μόνο inputs!
+            ```
+            Παράδειγμα: Έχουμε 10,000 φωτογραφίες αλλά δεν ξέρουμε τι δείχνουν
+            ```
+            
+            Το μοντέλο **αυτόνομα** ανακαλύπτει:
+            - Ομάδες παρόμοιων δεδομένων (clusters)
+            - Κρυφές διαστάσεις
+            - Anomalies (ασυνήθιστα patterns)
+            
+            ---
+            
+            ### 📊 Κύριοι Τύποι:
+            
+            #### 1️⃣ **Clustering (Ομαδοποίηση)**
+            - **Στόχος**: Ομαδοποίηση παρόμοιων δεδομένων
+            - **Output**: Cluster assignments
+            
+            **Αλγόριθμοι Clustering:**
+            
+            **K-Means:**
+            - Το πιο δημοφιλές
+            - Χωρίζει δεδομένα σε K clusters
+            - Γρήγορο και αποδοτικό
+            - Παράδειγμα: Ομαδοποίηση πελατών
+            
+            **Hierarchical Clustering:**
+            - Δημιουργεί dendrogram (δέντρο)
+            - Δεν χρειάζεται να ορίσεις K εκ των προτέρων
+            - Παράδειγμα: Ταξινόμηση ειδών (biology)
+            
+            **DBSCAN:**
+            - Density-based clustering
+            - Βρίσκει clusters αυθαίρετου σχήματος
+            - Ανιχνεύει outliers
+            - Παράδειγμα: Γεωγραφική ανάλυση
+            
+            **Gaussian Mixture Models (GMM):**
+            - Probabilistic clustering
+            - Soft assignments (πιθανότητες)
+            
+            **Εφαρμογές Clustering:**
+            - Customer segmentation (marketing)
+            - Image segmentation
+            - Document clustering
+            - Anomaly detection
+            - Gene expression analysis
+            
+            #### 2️⃣ **Dimensionality Reduction (Μείωση Διαστάσεων)**
+            - **Στόχος**: Μείωση αριθμού features διατηρώντας πληροφορία
+            - **Output**: Μειωμένες διαστάσεις
+            
+            **Αλγόριθμοι:**
+            
+            **PCA (Principal Component Analysis):**
+            - Βρίσκει principal components (κύριες διευθύνσεις διακύμανσης)
+            - Linear transformation
+            - Παράδειγμα: Από 1000 features → 50 features
+            
+            **t-SNE (t-Distributed Stochastic Neighbor Embedding):**
+            - Για visualization (2D/3D)
+            - Διατηρεί local structure
+            - Αργό για μεγάλα datasets
+            
+            **UMAP (Uniform Manifold Approximation and Projection):**
+            - Πιο γρήγορο από t-SNE
+            - Καλύτερο για μεγάλα datasets
+            
+            **Autoencoders:**
+            - Neural network-based
+            - Μαθαίνει compressed representation
+            
+            **Εφαρμογές:**
+            - Feature extraction
+            - Data visualization
+            - Noise reduction
+            - Compression
+            
+            #### 3️⃣ **Association Rule Learning**
+            - **Στόχος**: Βρες σχέσεις μεταξύ items
+            - **Output**: Rules (IF...THEN)
+            
+            **Αλγόριθμοι:**
+            - **Apriori**: Market basket analysis
+            - **FP-Growth**: Faster than Apriori
+            
+            **Παράδειγμα:**
+            ```
+            IF (αγοράζει ψωμί AND αγοράζει βούτυρο) 
+            THEN (πιθανόν να αγοράσει και μαρμελάδα)
+            ```
+            
+            **Εφαρμογές:**
+            - Market basket analysis (e-commerce)
+            - Recommendation systems
+            - Web usage mining
+            
+            #### 4️⃣ **Anomaly Detection (Ανίχνευση Ανωμαλιών)**
+            - **Στόχος**: Βρες ασυνήθιστα/outlier data points
+            
+            **Αλγόριθμοι:**
+            - **Isolation Forest**
+            - **One-Class SVM**
+            - **Local Outlier Factor (LOF)**
+            
+            **Εφαρμογές:**
+            - Fraud detection
+            - System health monitoring
+            - Quality control
+            
+            ---
+            
+            ### 📈 Αξιολόγηση:
+            
+            **Clustering Metrics:**
+            - **Silhouette Score**: Πόσο καλά χωρίζονται τα clusters (-1 to 1)
+            - **Davies-Bouldin Index**: Μικρότερο = καλύτερα
+            - **Calinski-Harabasz Score**: Μεγαλύτερο = καλύτερα
+            - **Inertia**: Εσωτερική διασπορά clusters
+            
+            **Dimensionality Reduction:**
+            - **Explained Variance Ratio**: Πόση πληροφορία διατηρείται
+            - **Reconstruction Error**: Πόσο καλά μπορούμε να ανακατασκευάσουμε τα original data
+            
+            ---
+            
+            ### 💼 Real-World Applications:
+            
+            **Marketing:**
+            - Customer segmentation (ομαδοποίηση πελατών σε segments)
+            - Market basket analysis (τι αγοράζουν μαζί)
+            
+            **Healthcare:**
+            - Patient stratification
+            - Disease subtype discovery
+            - Gene expression analysis
+            
+            **Finance:**
+            - Fraud detection (ανωμαλίες σε συναλλαγές)
+            - Portfolio optimization
+            
+            **Social Media:**
+            - Community detection
+            - Topic modeling
+            - Trend analysis
+            
+            **Manufacturing:**
+            - Defect detection
+            - Process monitoring
+            
+            ---
+            
+            ### ⚠️ Προκλήσεις:
+            
+            - **Evaluation is Tricky**: Δύσκολο να αξιολογήσεις χωρίς ground truth
+            - **Parameter Tuning**: (π.χ. πόσα clusters να διαλέξεις;)
+            - **Interpretability**: Τι σημαίνει το κάθε cluster;
+            - **Scalability**: Μερικοί αλγόριθμοι αργοί για big data
+            """,
+            """
+            **Πότε να χρησιμοποιήσετε:**
+            - ✅ ΔΕΝ έχετε labels (ή είναι ακριβό να τα φτιάξετε)
+            - ✅ Θέλετε exploratory analysis
+            - ✅ Ψάχνετε hidden patterns
+            - ✅ Preprocessing για supervised learning
+            
+            **Παράδειγμα Code (K-Means):**
+            ```python
+            from sklearn.cluster import KMeans
+            import matplotlib.pyplot as plt
+            
+            # Fit K-Means
+            kmeans = KMeans(n_clusters=3, random_state=42)
+            clusters = kmeans.fit_predict(X)
+            
+            # Visualize
+            plt.scatter(X[:, 0], X[:, 1], c=clusters, cmap='viridis')
+            plt.scatter(kmeans.cluster_centers_[:, 0], 
+                       kmeans.cluster_centers_[:, 1], 
+                       c='red', marker='X', s=200)
+            plt.show()
+            ```
+            
+            **Παράδειγμα Code (PCA):**
+            ```python
+            from sklearn.decomposition import PCA
+            
+            # Reduce from 100 features to 10
+            pca = PCA(n_components=10)
+            X_reduced = pca.fit_transform(X)
+            
+            # Check explained variance
+            print(f"Explained variance: {pca.explained_variance_ratio_.sum():.2%}")
+            ```
+            """
+        )
         
+        # REINFORCEMENT LEARNING
+        concept_explainer(
+            "🎮 Reinforcement Learning (Ενισχυτική Μάθηση)",
+            """
+            Η **Reinforcement Learning** είναι ένα παράδειγμα μάθησης όπου ένας **agent** (πράκτορας) 
+            μαθαίνει να παίρνει αποφάσεις αλληλεπιδρώντας με ένα **environment** (περιβάλλον) μέσω δοκιμής 
+            και λάθους, με στόχο τη **μεγιστοποίηση των rewards** (ανταμοιβών).
+            """,
+            """
+            ### 🎓 Πώς Λειτουργεί:
+            
+            **Βασική Ιδέα**: Trial and Error + Rewards
+            
+            ```
+            Agent (π.χ. ρομπότ) → Action → Environment
+                                        ↓
+                             State & Reward ← Environment
+                                        ↓
+                            Agent μαθαίνει τι είναι καλό/κακό
+            ```
+            
+            **Διαφορά από Supervised:**
+            - Supervised: "Αυτό είναι το σωστό" (explicit labels)
+            - RL: "Αυτό είναι καλό/κακό" (rewards/penalties)
+            
+            ---
+            
+            ### 🧩 Βασικά Στοιχεία:
+            
+            #### 1. **Agent (Πράκτορας)**
+            - Το "όν" που μαθαίνει και παίρνει αποφάσεις
+            - Παράδειγμα: Ρομπότ, AI παίκτης, trading bot
+            
+            #### 2. **Environment (Περιβάλλον)**
+            - Ο κόσμος με τον οποίο αλληλεπιδρά ο agent
+            - Παράδειγμα: Σκακιέρα, παιχνίδι video game, χρηματιστήριο
+            
+            #### 3. **State (Κατάσταση)**
+            - Η τρέχουσα κατάσταση του περιβάλλοντος
+            - Παράδειγμα: Θέσεις κομματιών στο σκάκι
+            
+            #### 4. **Action (Ενέργεια)**
+            - Τι μπορεί να κάνει ο agent
+            - Παράδειγμα: Μετακίνηση πιονιού, πήδημα, αγορά μετοχής
+            
+            #### 5. **Reward (Ανταμοιβή)**
+            - Αριθμητικό signal που λέει πόσο καλή ήταν η action
+            - Positive: Καλό (+1, +10, +100)
+            - Negative: Κακό (-1, -10, -100)
+            - Zero: Ουδέτερο
+            
+            #### 6. **Policy (Πολιτική) π**
+            - Η στρατηγική του agent: State → Action
+            - "Τι action να κάνω σε κάθε state"
+            
+            #### 7. **Value Function V(s)**
+            - Πόσο "καλό" είναι ένα state μακροπρόθεσμα
+            - Λαμβάνει υπόψη μελλοντικά rewards
+            
+            #### 8. **Q-Function Q(s,a)**
+            - Πόσο "καλή" είναι μια action σε ένα state
+            - Q(state, action) = Expected future reward
+            
+            ---
+            
+            ### 🎯 Τύποι RL:
+            
+            #### **Model-Free RL** (Δεν έχει μοντέλο του environment)
+            - Μαθαίνει απευθείας από experience
+            - Πιο κοινό στην πράξη
+            
+            #### **Model-Based RL** (Έχει μοντέλο του environment)
+            - Μαθαίνει πώς λειτουργεί το environment
+            - Μπορεί να σχεδιάζει μπροστά (planning)
+            
+            ---
+            
+            ### ⚙️ Κύριοι Αλγόριθμοι:
+            
+            #### 1️⃣ **Q-Learning** (Value-Based)
+            
+            **Ιδέα**: Μάθε την Q-function (quality of actions)
+            
+            **Update Rule:**
+            ```
+            Q(s,a) ← Q(s,a) + α[r + γ·max(Q(s',a')) - Q(s,a)]
+            ```
+            
+            Όπου:
+            - α: Learning rate (πόσο γρήγορα μαθαίνει)
+            - γ (gamma): Discount factor (πόσο σημαντικά είναι future rewards)
+            - r: Reward που έλαβε
+            - s': Next state
+            
+            **Χαρακτηριστικά:**
+            - Off-policy (μπορεί να μάθει από άλλους agents)
+            - Convergence guaranteed (υπό προϋποθέσεις)
+            - Κλασικός αλγόριθμος
+            
+            **Εφαρμογές:**
+            - Grid world navigation
+            - Simple games
+            
+            #### 2️⃣ **Deep Q-Networks (DQN)** (Deep RL)
+            
+            **Ιδέα**: Χρήση Neural Network για Q-function
+            
+            **Innovations:**
+            - **Experience Replay**: Αποθηκεύει (s,a,r,s') και τα replay
+            - **Target Network**: Σταθεροποίηση training
+            
+            **Επιτεύγματα:**
+            - DeepMind's Atari games (2013)
+            - Superhuman performance σε πολλά games
+            
+            #### 3️⃣ **Policy Gradients** (Policy-Based)
+            
+            **Ιδέα**: Μάθε απευθείας την policy π(a|s)
+            
+            **Αλγόριθμοι:**
+            - **REINFORCE**: Βασικός policy gradient
+            - **Actor-Critic**: Συνδυασμός value + policy
+            - **A3C** (Asynchronous Advantage Actor-Critic): Παράλληλοι agents
+            - **PPO** (Proximal Policy Optimization): State-of-the-art, stable
+            - **TRPO** (Trust Region Policy Optimization)
+            
+            **Πλεονεκτήματα:**
+            - Δουλεύει σε continuous action spaces
+            - Stochastic policies (πιθανοτικές)
+            
+            #### 4️⃣ **Advanced Algorithms**
+            
+            **DDPG** (Deep Deterministic Policy Gradient):
+            - Για continuous control
+            - Ρομποτική manipulation
+            
+            **SAC** (Soft Actor-Critic):
+            - Maximum entropy RL
+            - Πολύ stable
+            
+            **AlphaGo/AlphaZero:**
+            - Monte Carlo Tree Search + Deep RL
+            - Superhuman Go playing
+            
+            ---
+            
+            ### 📈 Exploration vs Exploitation:
+            
+            **Δίλημμα**: Να δοκιμάσω νέα (explore) ή να κάνω το γνωστό καλό (exploit);
+            
+            **Strategies:**
+            - **ε-greedy**: Με πιθανότητα ε κάνε random action
+            - **Softmax**: Probabilistic selection
+            - **Upper Confidence Bound (UCB)**: Optimistic exploration
+            
+            ---
+            
+            ### 💼 Real-World Applications:
+            
+            **Gaming:**
+            - AlphaGo (Go)
+            - OpenAI Five (Dota 2)
+            - AlphaStar (StarCraft II)
+            - Game AI characters
+            
+            **Robotics:**
+            - Robotic manipulation (πιάσιμο αντικειμένων)
+            - Locomotion (περπάτημα)
+            - Autonomous navigation
+            - Assembly tasks
+            
+            **Autonomous Vehicles:**
+            - Path planning
+            - Adaptive cruise control
+            - Parking
+            
+            **Finance:**
+            - Trading strategies
+            - Portfolio management
+            - Dynamic pricing
+            
+            **Healthcare:**
+            - Treatment optimization
+            - Personalized medicine
+            - Drug dosing
+            
+            **Recommender Systems:**
+            - YouTube recommendations
+            - News feed optimization
+            - Ad placement
+            
+            **Energy:**
+            - Data center cooling (Google)
+            - Smart grid management
+            - Building HVAC control
+            
+            **Natural Language:**
+            - Dialogue systems
+            - Neural architecture search
+            - Machine translation improvements
+            
+            ---
+            
+            ### 📊 Challenges:
+            
+            #### **Sample Efficiency**
+            - Χρειάζεται ΠΟΛΛΑ δείγματα (millions!)
+            - Αργή εκπαίδευση
+            - Λύση: Transfer learning, sim-to-real
+            
+            #### **Reward Engineering**
+            - Δύσκολο να ορίσεις σωστά rewards
+            - Reward hacking (agent βρίσκει shortcuts)
+            - Λύση: Inverse RL, reward shaping
+            
+            #### **Stability**
+            - Training μπορεί να diverge
+            - Sensitive σε hyperparameters
+            - Λύση: PPO, SAC (πιο stable algorithms)
+            
+            #### **Credit Assignment**
+            - Ποια action ήταν υπεύθυνη για το reward;
+            - Temporal credit assignment problem
+            
+            #### **Exploration**
+            - Πώς να explore αποδοτικά;
+            - Sparse rewards (λίγα rewards)
+            
+            ---
+            
+            ### 🛠️ Frameworks & Tools:
+            
+            **OpenAI Gym:**
+            - Standard RL environments
+            - Atari, MuJoCo, Robotics
+            
+            **Stable Baselines3:**
+            - Reliable RL implementations
+            - PPO, A2C, SAC, TD3, DQN
+            
+            **Ray RLlib:**
+            - Scalable RL
+            - Distributed training
+            
+            **TF-Agents:**
+            - TensorFlow RL library
+            
+            **PyTorch RL:**
+            - Πολλές implementations
+            """,
+            """
+            **Πότε να χρησιμοποιήσετε:**
+            - ✅ Έχετε sequential decision problem
+            - ✅ Μπορείτε να ορίσετε rewards
+            - ✅ Έχετε simulator (ή real environment)
+            - ✅ Χρειάζεστε adaptive behavior
+            - ✅ Το problem έχει long-term consequences
+            
+            **Παράδειγμα Code (Q-Learning):**
+            ```python
+            import numpy as np
+            
+            # Initialize Q-table
+            Q = np.zeros([n_states, n_actions])
+            alpha = 0.1  # learning rate
+            gamma = 0.99  # discount factor
+            
+            for episode in range(1000):
+                state = env.reset()
+                done = False
+                
+                while not done:
+                    # ε-greedy action selection
+                    if np.random.random() < epsilon:
+                        action = env.action_space.sample()  # explore
+                    else:
+                        action = np.argmax(Q[state, :])  # exploit
+                    
+                    # Take action
+                    next_state, reward, done, _ = env.step(action)
+                    
+                    # Q-learning update
+                    Q[state, action] = Q[state, action] + alpha * (
+                        reward + gamma * np.max(Q[next_state, :]) - Q[state, action]
+                    )
+                    
+                    state = next_state
+            ```
+            
+            **Παράδειγμα Code (PPO με Stable-Baselines3):**
+            ```python
+            from stable_baselines3 import PPO
+            import gym
+            
+            # Create environment
+            env = gym.make('CartPole-v1')
+            
+            # Train PPO agent
+            model = PPO('MlpPolicy', env, verbose=1)
+            model.learn(total_timesteps=10000)
+            
+            # Test trained agent
+            obs = env.reset()
+            for i in range(1000):
+                action, _states = model.predict(obs)
+                obs, reward, done, info = env.step(action)
+                env.render()
+                if done:
+                    obs = env.reset()
+            ```
+            """
+        )
+        
+        st.markdown("---")
+        st.markdown("""
         #### 🔍 Βασικά Στάδια ML Pipeline
         
         1. **Data Collection** (Συλλογή Δεδομένων)
