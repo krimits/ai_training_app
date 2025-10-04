@@ -2646,7 +2646,7 @@ with tabs[4]:
             'Τιμή (€)': price
         })
         
-        st.dataframe(df_houses.head(10), width=None)
+        st.dataframe(df_houses.head(10))
         
         if st.button('🚀 Εκπαίδευση Μοντέλου Πρόβλεψης'):
             from sklearn.linear_model import LinearRegression
