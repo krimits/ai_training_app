@@ -66,6 +66,24 @@
 3. **Sentiment Analysis** - Text sentiment detector
 4. **Recommendation System** - Movie recommender
 
+### 🤖 AI Knowledge Assistant ⭐ **ΝΕΟ!**
+Intelligent chatbot με γνώση από το πλήρες εκπαιδευτικό υλικό:
+- ✅ Απαντά σε ερωτήσεις για AI concepts
+- ✅ Εξηγεί τεχνικούς όρους με παραδείγματα
+- ✅ Παρέχει εις βάθος αναλύσεις
+- ✅ Chat interface με ιστορικό
+- ✅ Quick question buttons για γρήγορη πρόσβαση
+
+**Θέματα που καλύπτει:**
+- Βασικά δομικά στοιχεία της AI
+- Machine Learning (όλοι οι τύποι)
+- Deep Learning αρχιτεκτονικές
+- ChatGPT και LLMs
+- Αλγόριθμοι και τεχνικές
+- Πρακτικές εφαρμογές
+
+Δείτε το [CHATBOT_DOCS.md](CHATBOT_DOCS.md) για λεπτομέρειες!
+
 ### 📓 Google Colab Integration ⭐ **ΝΕΟ!**
 Hands-on εκπαίδευση με πραγματικό κώδικα:
 - ✅ Δωρεάν GPU/TPU access
