@@ -66,7 +66,7 @@ st.title('🤖 AI Training — Πλήρης Εκπαίδευση στην Τεχ
 st.markdown('### Εφαρμογές Τεχνητής Νοημοσύνης και ChatGPT σε Κρίσιμους Τομείς')
 st.markdown('---')
 
-tabs = st.tabs(['📚 Περιεχόμενο','🐍 Παραδείγματα Python','🔬 Εξομοιώσεις AI','✅ Κουίζ','💡 Διαδραστικές Ασκήσεις','📖 Πόροι'])
+tabs = st.tabs(['📚 Περιεχόμενο','🐍 Παραδείγματα Python','🔬 Εξομοιώσεις AI','✅ Κουίζ','💡 Διαδραστικές Ασκήσεις','🤖 AI Chatbot','📖 Πόροι'])
 
 with tabs[0]:
     section_title('1.1 Εισαγωγή — Τι είναι η Τεχνητή Νοημοσύνη')
@@ -2896,6 +2896,46 @@ with tabs[4]:
             plt.close()
 
 with tabs[5]:
+    # Import chatbot module
+    from chatbot import create_chatbot_interface
+    
+    section_title('AI Knowledge Assistant - Ρωτήστε με οτιδήποτε!')
+    
+    st.markdown("""
+    Καλώς ήρθατε στον **AI Knowledge Assistant**! 🤖
+    
+    Αυτός ο intelligent chatbot έχει πρόσβαση στο πλήρες εκπαιδευτικό υλικό και μπορεί να απαντήσει
+    σε ερωτήσεις σχετικά με την Τεχνητή Νοημοσύνη.
+    
+    ### 💡 Τι μπορεί να κάνει:
+    
+    - ✅ Απαντά σε ερωτήσεις για AI concepts
+    - ✅ Εξηγεί τεχνικούς όρους με παραδείγματα
+    - ✅ Παρέχει εις βάθος αναλύσεις
+    - ✅ Συνδέει διάφορες έννοιες μεταξύ τους
+    
+    ### 🎯 Θέματα που καλύπτει:
+    
+    - Βασικά δομικά στοιχεία της AI
+    - Machine Learning (Supervised, Unsupervised, Reinforcement)
+    - Deep Learning και αρχιτεκτονικές
+    - ChatGPT και Large Language Models
+    - Πρακτικές εφαρμογές σε διάφορους τομείς
+    - Αλγόριθμοι και τεχνικές
+    
+    ---
+    """)
+    
+    # Create chatbot interface
+    create_chatbot_interface()
+    
+    st.markdown("---")
+    st.info("""
+    💡 **Tip**: Το chatbot χρησιμοποιεί το εκπαιδευτικό υλικό από το PDF για να παρέχει ακριβείς απαντήσεις.
+    Για πιο προηγμένες ερωτήσεις, δείτε τις ενότητες "Περιεχόμενο" και "Concept Explainers".
+    """)
+
+with tabs[6]:
     section_title('Πόροι & Οδηγίες')
     
     st.markdown("""
