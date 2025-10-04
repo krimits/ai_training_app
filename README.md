@@ -1,25 +1,164 @@
-# ai_training_app
-Εκπαιδευτική Εφαρμογή
-AI Training — Διαδραστική Εφαρμογή (Offline)
-===========================================
+# 🤖 AI Training App - Διαδραστική Εκπαιδευτική Εφαρμογή
 
-Περιεχόμενο
-- Ενότητες 1.1 έως 1.7 (σύντομες επεξηγήσεις στα Ελληνικά)
-- Κουίζ αυτοαξιολόγησης με ανατροφοδότηση
-- Παραδείγματα Python: scikit-learn (Logistic Regression), simple clustering, plots
-- Απλές εξομοιώσεις: ταξινόμηση συνθετικών δεδομένων
-- Οπτικό υλικό: διαγράμματα matplotlib
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Απαιτήσεις (τοπικά, offline):
-- Python 3.8+
-- pip install streamlit scikit-learn matplotlib numpy pandas seaborn tensorflow (optional)
+Μια πλήρης, διαδραστική εκπαιδευτική εφαρμογή για την εκμάθηση **Τεχνητής Νοημοσύνης** και **ChatGPT** στα Ελληνικά!
 
-Τρόπος εκτέλεσης:
-1. Εγκαταστήστε απαιτήσεις (μία φορά):
-   pip install streamlit scikit-learn matplotlib numpy pandas seaborn tensorflow==2.14.0
-   (η εγκατάσταση του TensorFlow απαιτεί χώρο — αν δεν το θέλετε, η εφαρμογή δουλεύει και χωρίς την ενότητα NN)
+## 🌟 Χαρακτηριστικά
 
-2. Τρέξτε την εφαρμογή:
-   streamlit run ai_training_app.py
+### 📚 Πλήρες Θεωρητικό Υλικό
+- **Ενότητα 1.1**: Εισαγωγή στην AI - Ορισμοί και Βασικές Έννοιες
+- **Ενότητα 1.2**: Κύρια Δομικά Στοιχεία (Δεδομένα, Αλγόριθμοι, Μοντέλα, Υποδομές)
+- **Ενότητα 1.3**: Ιστορικά Επιτεύγματα (1950-2022)
+- **Ενότητα 1.4**: Εφαρμογές AI σε Διάφορους Τομείς
+- **Ενότητα 1.5**: Βασικές Αρχές και Ηθική AI
+- **Ενότητα 1.6**: Πώς Λειτουργεί το ChatGPT
+- **Ενότητα 1.7**: Machine Learning, Deep Learning, Generative AI
 
-3. Άνοιγμα σε browser: http://localhost:8501
+### 🔍 Αναλυτικές Κατηγορίες με Expanders
+Κάθε κατηγορία AI έχει πλούσιο εκπαιδευτικό υλικό:
+- 🧠 **Machine Learning**: Supervised, Unsupervised, Reinforcement Learning
+- 🌐 **Deep Learning**: CNN, RNN, Transformers, GANs
+- 💬 **NLP**: Sentiment Analysis, Translation, Text Generation
+- 👁️ **Computer Vision**: Object Detection, Segmentation, Face Recognition
+- 🤖 **Robotics**: Αυτόνομα οχήματα, Industrial Robots, Drones
+
+### 🐍 Πρακτικά Παραδείγματα Python
+1. **Logistic Regression** - Επιβλεπόμενη μάθηση με interactive sliders
+2. **K-Means Clustering** - Μη επιβλεπόμενη μάθηση με visualization
+3. **Neural Networks** - Multi-layer perceptron με loss curves
+
+### 🔬 Διαδραστικές Εξομοιώσεις
+- Επίδραση Θορύβου στην Ακρίβεια
+- Overfitting vs Underfitting
+- Επίδραση Μεγέθους Dataset
+- Decision Boundary Visualization
+
+### ✅ Κουίζ Αυτοαξιολόγησης (15 Ερωτήσεις)
+Διαιρεμένες σε 5 κατηγορίες:
+- Γενικά για AI
+- Machine Learning
+- ChatGPT & LLMs
+- Εφαρμογές AI
+- Ηθική & Κοινωνία
+
+### 💡 Διαδραστικές Ασκήσεις
+1. **Πρόβλεψη Τιμών Ακινήτων** - Regression με real-time predictions
+2. **Image Classification Simulation** - Training visualization
+3. **Sentiment Analysis** - Text sentiment detector
+4. **Recommendation System** - Movie recommender
+
+## 🚀 Εγκατάσταση
+
+### Προαπαιτούμενα
+- Python 3.8 ή νεότερο
+- pip (Python package manager)
+
+### Βήματα Εγκατάστασης
+
+```bash
+# Clone το repository
+git clone https://github.com/krimits/ai_training_app.git
+cd ai_training_app
+
+# Εγκατάσταση dependencies
+pip install -r requirements.txt
+
+# Εκτέλεση εφαρμογής
+streamlit run ai_training_app.py
+```
+
+Η εφαρμογή θα ανοίξει αυτόματα στο browser στο `http://localhost:8501`
+
+## 📦 Dependencies
+
+```
+streamlit
+scikit-learn
+matplotlib
+numpy
+pandas
+seaborn
+```
+
+## 💻 Χρήση
+
+### Online (Streamlit Cloud)
+Απλά επισκεφτείτε το deployed link (θα προστεθεί σύντομα)
+
+### Local Development
+```bash
+streamlit run ai_training_app.py
+```
+
+## 📖 Δομή Εφαρμογής
+
+```
+ai_training_app/
+├── ai_training_app.py      # Κύρια εφαρμογή
+├── requirements.txt         # Python dependencies
+├── README.md               # Αυτό το αρχείο
+├── README.txt              # Οδηγίες offline
+├── sample_data.csv         # Δείγμα δεδομένων
+└── .gitignore             # Git ignore rules
+```
+
+## 🎯 Μαθησιακοί Στόχοι
+
+Μετά την ολοκλήρωση αυτής της εφαρμογής, θα μπορείτε να:
+
+✅ Κατανοείτε τις βασικές έννοιες της AI  
+✅ Διακρίνετε τις διαφορές μεταξύ ML, DL, και άλλων κλάδων  
+✅ Εφαρμόζετε βασικούς αλγορίθμους ML σε Python  
+✅ Κατανοείτε πώς λειτουργεί το ChatGPT  
+✅ Αναγνωρίζετε εφαρμογές AI σε διάφορους τομείς  
+✅ Αξιολογείτε ηθικά ζητήματα στην AI  
+
+## 🤝 Συνεισφορά
+
+Contributions are welcome! Αν θέλετε να συνεισφέρετε:
+
+1. Fork το repository
+2. Δημιουργήστε ένα feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit τις αλλαγές σας (`git commit -m 'Add some AmazingFeature'`)
+4. Push στο branch (`git push origin feature/AmazingFeature`)
+5. Ανοίξτε ένα Pull Request
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 👨‍💻 Δημιουργός
+
+**Theodoros Krimitsas**
+- GitHub: [@krimits](https://github.com/krimits)
+
+## 🙏 Ευχαριστίες
+
+- Βασισμένο στο εκπαιδευτικό υλικό: "Εφαρμογές Τεχνητής Νοημοσύνης και ChatGPT σε Κρίσιμους Τομείς"
+- Built with [Streamlit](https://streamlit.io/)
+- ML algorithms από [scikit-learn](https://scikit-learn.org/)
+- Visualizations με [Matplotlib](https://matplotlib.org/) & [Seaborn](https://seaborn.pydata.org/)
+
+## 📧 Επικοινωνία
+
+Για ερωτήσεις, προτάσεις ή feedback:
+- Ανοίξτε ένα [Issue](https://github.com/krimits/ai_training_app/issues)
+
+## 🔮 Roadmap
+
+- [ ] Προσθήκη περισσότερων διαδραστικών ασκήσεων
+- [ ] Υποστήριξη για TensorFlow/Keras examples
+- [ ] Video tutorials για κάθε ενότητα
+- [ ] Multilingual support (English version)
+- [ ] Mobile-friendly UI improvements
+- [ ] Integration με real AI APIs (OpenAI, Hugging Face)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ using Streamlit</p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
