@@ -2968,13 +2968,13 @@ with tabs[5]:
             αντί για "Πες μου για AI"
             """)
         
-    except ImportError:
+    except (ImportError, Exception) as e:
         # Fallback to old chatbot
         from chatbot import create_chatbot_interface
         
         section_title('AI Knowledge Assistant - Ρωτήστε με οτιδήποτε!')
         
-        st.warning("⚠️ Το εμπλουτισμένο chatbot δεν είναι διαθέσιμο. Χρήση βασικής έκδοσης...")
+        st.warning(f"⚠️ Το εμπλουτισμένο chatbot δεν είναι διαθέσιμο. Χρήση βασικής έκδοσης...")
         
         st.markdown("""
         Καλώς ήρθατε στον **AI Knowledge Assistant**! 🤖
@@ -2984,31 +2984,31 @@ with tabs[5]:
         
         ### 💡 Τι μπορεί να κάνει:
     
-    - ✅ Απαντά σε ερωτήσεις για AI concepts
-    - ✅ Εξηγεί τεχνικούς όρους με παραδείγματα
-    - ✅ Παρέχει εις βάθος αναλύσεις
-    - ✅ Συνδέει διάφορες έννοιες μεταξύ τους
-    
-    ### 🎯 Θέματα που καλύπτει:
-    
-    - Βασικά δομικά στοιχεία της AI
-    - Machine Learning (Supervised, Unsupervised, Reinforcement)
-    - Deep Learning και αρχιτεκτονικές
-    - ChatGPT και Large Language Models
-    - Πρακτικές εφαρμογές σε διάφορους τομείς
-    - Αλγόριθμοι και τεχνικές
-    
-    ---
-    """)
-    
-    # Create chatbot interface
-    create_chatbot_interface()
-    
-    st.markdown("---")
-    st.info("""
-    💡 **Tip**: Το chatbot χρησιμοποιεί το εκπαιδευτικό υλικό από το PDF για να παρέχει ακριβείς απαντήσεις.
-    Για πιο προηγμένες ερωτήσεις, δείτε τις ενότητες "Περιεχόμενο" και "Concept Explainers".
-    """)
+        - ✅ Απαντά σε ερωτήσεις για AI concepts
+        - ✅ Εξηγεί τεχνικούς όρους με παραδείγματα
+        - ✅ Παρέχει εις βάθος αναλύσεις
+        - ✅ Συνδέει διάφορες έννοιες μεταξύ τους
+        
+        ### 🎯 Θέματα που καλύπτει:
+        
+        - Βασικά δομικά στοιχεία της AI
+        - Machine Learning (Supervised, Unsupervised, Reinforcement)
+        - Deep Learning και αρχιτεκτονικές
+        - ChatGPT και Large Language Models
+        - Πρακτικές εφαρμογές σε διάφορους τομείς
+        - Αλγόριθμοι και τεχνικές
+        
+        ---
+        """)
+        
+        # Create chatbot interface
+        create_chatbot_interface()
+        
+        st.markdown("---")
+        st.info("""
+        💡 **Tip**: Το chatbot χρησιμοποιεί το εκπαιδευτικό υλικό από το PDF για να παρέχει ακριβείς απαντήσεις.
+        Για πιο προηγμένες ερωτήσεις, δείτε τις ενότητες "Περιεχόμενο" και "Concept Explainers".
+        """)
 
 with tabs[6]:
     section_title('Πόροι & Οδηγίες')
