@@ -2898,7 +2898,7 @@ with tabs[4]:
 with tabs[5]:
     # Import ΕΜΠΛΟΥΤΙΣΜΕΝΟ chatbot module με ΠΛΗΡΗ γνώση
     try:
-        from chatbot_enriched import create_enriched_chatbot_interface
+        from chatbot_simple import create_chatbot_interface as create_enriched_chatbot_interface
         
         section_title('🌟 AI Knowledge Assistant - Εμπλουτισμένη Έκδοση')
         
