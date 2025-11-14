@@ -1,0 +1,63 @@
+@startuml Chatbot Interaction Sequence
+
+!define TITLE Sequence Diagram - Chatbot Interaction Flow
+
+title TITLE
+
+actor User as U
+participant "Streamlit UI" as UI
+participant "AIKnowledgeBot" as Bot
+participant "Knowledge Base\n(pdf_content.txt)" as KB
+participant "Wikipedia API" as Wiki
+participant "Web Search" as Web
+
+== Αρχικοποίηση ==
+U -> UI: Φόρτωση σελίδας Chatbot
+UI -> Bot: create_chatbot_interface()
+Bot -> Bot: __init__()
+Bot -> KB: _load_knowledge()
+KB --> Bot: περιεχόμενο PDF
+Bot -> Bot: _create_qa_database()
+Bot --> UI: Chatbot initialized
+UI --> U: Εμφάνιση interface
+
+== Υποβολή Ερώτησης ==
+U -> UI: Γράφει ερώτηση
+UI -> Bot: get_answer(question)
+
+Bot -> Bot: _extract_topics(question)
+
+== Αναζήτηση σε Knowledge Base ==
+Bot -> Bot: Search in qa_pairs
+alt Βρέθηκε απάντηση στο QA database
+  Bot --> UI: Απάντηση από QA
+  UI --> U: Εμφάνιση απάντησης
+else Δεν βρέθηκε στο QA
+  Bot -> KB: Search in knowledge_base
+  alt Βρέθηκε στο knowledge base
+    Bot -> Bot: _generate_generic_answer()
+    Bot --> UI: Απάντηση από KB
+    UI --> U: Εμφάνιση απάντησης
+  else Δεν βρέθηκε στο KB
+    
+    == Αναζήτηση στο Internet ==
+    Bot -> Wiki: _search_wikipedia(question)
+    Wiki --> Bot: Αποτελέσματα Wikipedia
+    
+    alt Βρέθηκαν αποτελέσματα
+      Bot --> UI: Απάντηση από Wikipedia
+      UI --> U: Εμφάνιση απάντησης
+    else Δεν βρέθηκαν αποτελέσματα
+      Bot -> Web: _search_online(question)
+      Web --> Bot: Αποτελέσματα Web Search
+      Bot --> UI: Απάντηση από Web
+      UI --> U: Εμφάνιση απάντησης
+    end
+  end
+end
+
+== Εμφάνιση Πηγών ==
+Bot -> Bot: Update sources_used
+UI --> U: Εμφάνιση πηγών πληροφοριών
+
+@enduml

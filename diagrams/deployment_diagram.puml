@@ -1,0 +1,108 @@
+@startuml Deployment Diagram
+
+!define TITLE Deployment Diagram - AI Training App Deployment
+
+title TITLE
+
+' Nodes
+node "Client Device" as Client {
+  component [Web Browser] as Browser
+}
+
+node "Streamlit Cloud\n(Production)" as Cloud {
+  component [Streamlit Server] as StreamlitServer
+  artifact "ai_training_app.py" as MainApp
+  artifact "chatbot.py" as ChatbotModule
+}
+
+node "Local Development\nEnvironment" as Local {
+  component [Python 3.8+] as Python
+  component [Streamlit Local] as StreamlitLocal
+  folder "Source Code" {
+    artifact "ai_training_app.py" as MainAppLocal
+    artifact "chatbot.py" as ChatbotLocal
+  }
+}
+
+node "Data Storage" as Storage {
+  database "pdf_content.txt\n(731KB)" as KB
+  database "sample_data.csv" as SampleData
+}
+
+node "External APIs" as APIs {
+  component [Wikipedia API] as WikiAPI
+  component [Web Search] as WebAPI
+}
+
+node "Version Control" as VCS {
+  component [GitHub Repository] as GitHub
+  folder "Repository" {
+    artifact "Python Files" as Code
+    artifact "Requirements" as Req
+    artifact "Documentation" as Docs
+    artifact "UML Diagrams" as Diagrams
+  }
+}
+
+' Relationships - Production
+Browser --> StreamlitServer : HTTPS
+StreamlitServer --> MainApp : executes
+StreamlitServer --> ChatbotModule : loads
+ChatbotModule --> KB : reads
+MainApp --> SampleData : loads
+ChatbotModule --> WikiAPI : REST API
+ChatbotModule --> WebAPI : HTTP
+
+' Relationships - Development
+Python --> StreamlitLocal : runs
+StreamlitLocal --> MainAppLocal : executes
+StreamlitLocal --> ChatbotLocal : loads
+
+' Relationships - Version Control
+Local --> GitHub : git push
+Cloud --> GitHub : git pull
+GitHub --> Code : stores
+GitHub --> Req : stores
+GitHub --> Docs : stores
+GitHub --> Diagrams : stores
+
+' Notes
+note right of Cloud
+  Deployment Options:
+  • Streamlit Cloud (Production)
+  • Heroku
+  • AWS/Azure/GCP
+  • Docker Container
+end note
+
+note right of Local
+  Development Setup:
+  $ pip install -r requirements.txt
+  $ streamlit run ai_training_app.py
+  
+  Localhost: http://localhost:8501
+end note
+
+note bottom of Storage
+  Δεδομένα αποθηκεύονται
+  στο repository και
+  φορτώνονται κατά την εκτέλεση
+end note
+
+note top of VCS
+  GitHub Repository:
+  krimits/ai_training_app
+  
+  Branch: main
+  License: MIT
+end note
+
+note left of Browser
+  Supported Browsers:
+  • Chrome
+  • Firefox
+  • Safari
+  • Edge
+end note
+
+@enduml

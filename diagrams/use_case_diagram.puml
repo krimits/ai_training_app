@@ -1,0 +1,121 @@
+@startuml Use Case Diagram
+
+!define TITLE Use Case Diagram - AI Training App
+
+title TITLE
+
+left to right direction
+
+' Actors
+actor "Μαθητής/Φοιτητής" as Student
+actor "Επαγγελματίας" as Professional
+actor "Εκπαιδευτικός" as Teacher
+
+' System Boundary
+rectangle "AI Training App" {
+  
+  ' Learning Use Cases
+  package "Εκμάθηση" {
+    usecase "Μελέτη Θεωρίας" as UC1
+    usecase "Προβολή Ενοτήτων AI" as UC2
+    usecase "Ανάγνωση Εξηγήσεων" as UC3
+    usecase "Κατανόηση Εννοιών" as UC4
+  }
+  
+  ' Practice Use Cases
+  package "Πρακτική Εξάσκηση" {
+    usecase "Εκτέλεση Python\nExamples" as UC5
+    usecase "Διαδραστικές\nΕξομοιώσεις" as UC6
+    usecase "Πειραματισμός με\nParameters" as UC7
+    usecase "Οπτικοποίηση\nAποτελεσμάτων" as UC8
+  }
+  
+  ' Assessment Use Cases
+  package "Αξιολόγηση" {
+    usecase "Απάντηση σε Quiz" as UC9
+    usecase "Αυτοαξιολόγηση" as UC10
+    usecase "Επίλυση Ασκήσεων" as UC11
+  }
+  
+  ' AI Assistant Use Cases
+  package "AI Βοηθός" {
+    usecase "Υποβολή Ερωτήσεων\nστο Chatbot" as UC12
+    usecase "Λήψη Απαντήσεων" as UC13
+    usecase "Αναζήτηση στο\nKnowledge Base" as UC14
+    usecase "Web Search" as UC15
+  }
+  
+  ' Resources Use Cases
+  package "Πόροι" {
+    usecase "Πρόσβαση σε\nColab Notebooks" as UC16
+    usecase "Προβολή\nDocumentation" as UC17
+    usecase "Εξωτερικές Πηγές" as UC18
+  }
+}
+
+' External Systems
+actor "Wikipedia API" as Wiki
+actor "Web Search Engine" as Web
+
+' Student Relationships
+Student --> UC1
+Student --> UC5
+Student --> UC9
+Student --> UC12
+Student --> UC16
+
+' Professional Relationships
+Professional --> UC1
+Professional --> UC5
+Professional --> UC12
+Professional --> UC16
+
+' Teacher Relationships
+Teacher --> UC1
+Teacher --> UC2
+Teacher --> UC17
+
+' Include/Extend Relationships
+UC1 .> UC2 : <<include>>
+UC1 .> UC3 : <<include>>
+UC2 .> UC4 : <<extend>>
+
+UC5 .> UC7 : <<include>>
+UC5 .> UC8 : <<include>>
+UC6 .> UC7 : <<include>>
+UC6 .> UC8 : <<include>>
+
+UC9 .> UC10 : <<include>>
+
+UC12 .> UC13 : <<include>>
+UC13 .> UC14 : <<include>>
+UC14 .> UC15 : <<extend>>
+
+UC16 .> UC18 : <<extend>>
+
+' External System Relationships
+UC15 --> Wiki : uses
+UC15 --> Web : uses
+
+' Notes
+note right of UC12
+  Ενσωματωμένος AI chatbot
+  με πρόσβαση σε:
+  • PDF Knowledge Base
+  • Wikipedia
+  • Web Search
+end note
+
+note bottom of UC5
+  Διαδραστικά παραδείγματα:
+  • Logistic Regression
+  • K-Means Clustering
+  • Neural Networks
+end note
+
+note left of Student
+  Κύριος χρήστης
+  που μαθαίνει AI
+end note
+
+@enduml

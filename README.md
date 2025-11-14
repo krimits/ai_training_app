@@ -101,6 +101,16 @@ Hands-on εκπαίδευση με πραγματικό κώδικα:
 
 Δείτε το [COLAB_NOTEBOOKS.md](COLAB_NOTEBOOKS.md) για πλήρεις οδηγίες!
 
+## 📚 Τεκμηρίωση
+
+| Έγγραφο | Περιγραφή | Περιεχόμενο |
+|---------|-----------|-------------|
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** ⭐ **ΝΕΟ!** | Αρχιτεκτονική & UML Διαγράμματα | 6 επαγγελματικά UML διαγράμματα (Class, Sequence, Component, Activity, Use Case, Deployment) |
+| **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** | Ολοκληρωμένη Σύνοψη | Χαρακτηριστικά, τεχνολογίες, στατιστικά, roadmap |
+| **[CHATBOT_DOCS.md](CHATBOT_DOCS.md)** | AI Chatbot Guide | Λειτουργίες, παραδείγματα, τεχνική υλοποίηση |
+| **[COLAB_NOTEBOOKS.md](COLAB_NOTEBOOKS.md)** | Google Colab Integration | 6+ notebooks, tutorials, οδηγίες χρήσης |
+| **[diagrams/README.md](diagrams/README.md)** | UML Diagrams Guide | Οδηγίες προβολής και συντήρησης διαγραμμάτων |
+
 ## 🚀 Εγκατάσταση
 
 ### Προαπαιτούμενα
@@ -149,12 +159,25 @@ streamlit run ai_training_app.py
 ```
 ai_training_app/
 ├── ai_training_app.py      # Κύρια εφαρμογή
+├── chatbot.py              # AI Chatbot module
 ├── requirements.txt         # Python dependencies
+├── diagrams/               # UML διαγράμματα (PlantUML)
+├── ARCHITECTURE.md         # Τεχνική αρχιτεκτονική
 ├── README.md               # Αυτό το αρχείο
 ├── README.txt              # Οδηγίες offline
 ├── sample_data.csv         # Δείγμα δεδομένων
 └── .gitignore             # Git ignore rules
 ```
+
+### 🏗️ Αρχιτεκτονική & UML Διαγράμματα
+
+Για αναλυτική τεκμηρίωση της αρχιτεκτονικής με **6 επαγγελματικά UML διαγράμματα**, δείτε το [ARCHITECTURE.md](ARCHITECTURE.md):
+- Class Diagrams
+- Sequence Diagrams  
+- Component Diagrams
+- Activity Diagrams
+- Use Case Diagrams
+- Deployment Diagrams
 
 ## 🎯 Μαθησιακοί Στόχοι
 
