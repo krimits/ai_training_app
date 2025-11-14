@@ -101,6 +101,16 @@ Hands-on εκπαίδευση με πραγματικό κώδικα:
 
 Δείτε το [COLAB_NOTEBOOKS.md](COLAB_NOTEBOOKS.md) για πλήρεις οδηγίες!
 
+## 📚 Τεκμηρίωση
+
+| Έγγραφο | Περιγραφή | Περιεχόμενο |
+|---------|-----------|-------------|
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** ⭐ **ΝΕΟ!** | Αρχιτεκτονική & UML Διαγράμματα | 6 επαγγελματικά UML διαγράμματα (Class, Sequence, Component, Activity, Use Case, Deployment) |
+| **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** | Ολοκληρωμένη Σύνοψη | Χαρακτηριστικά, τεχνολογίες, στατιστικά, roadmap |
+| **[CHATBOT_DOCS.md](CHATBOT_DOCS.md)** | AI Chatbot Guide | Λειτουργίες, παραδείγματα, τεχνική υλοποίηση |
+| **[COLAB_NOTEBOOKS.md](COLAB_NOTEBOOKS.md)** | Google Colab Integration | 6+ notebooks, tutorials, οδηγίες χρήσης |
+| **[diagrams/README.md](diagrams/README.md)** | UML Diagrams Guide | Οδηγίες προβολής και συντήρησης διαγραμμάτων |
+
 ## 🚀 Εγκατάσταση
 
 ### Προαπαιτούμενα
