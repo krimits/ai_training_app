@@ -194,6 +194,8 @@ Drag & drop exercises για:
 
 ### Αρχιτεκτονική Εφαρμογής
 
+> 📊 **ΝΕΟ**: Για αναλυτικά UML διαγράμματα, δείτε το [ARCHITECTURE.md](ARCHITECTURE.md)
+
 ```
 ┌─────────────────────────────────────────┐
 │         Streamlit Frontend              │
@@ -221,6 +223,19 @@ Drag & drop exercises για:
 │   - Web Search               │
 └──────────────────────────────┘
 ```
+
+#### 🏗️ UML Διαγράμματα Αρχιτεκτονικής
+
+Το project περιλαμβάνει **6 επαγγελματικά UML διαγράμματα**:
+
+1. **Class Diagram** - Δομή της κλάσης AIKnowledgeBot
+2. **Sequence Diagram** - Ροή αλληλεπίδρασης chatbot
+3. **Component Diagram** - Αρχιτεκτονική συστατικών
+4. **Activity Diagram** - Ροή κύριας εφαρμογής
+5. **Use Case Diagram** - Λειτουργικές απαιτήσεις
+6. **Deployment Diagram** - Αρχιτεκτονική ανάπτυξης
+
+Όλα τα διαγράμματα σε **PlantUML format** στο φάκελο `/diagrams/`. Δείτε [ARCHITECTURE.md](ARCHITECTURE.md) για αναλυτική τεκμηρίωση.
 
 ### Core Technologies
 

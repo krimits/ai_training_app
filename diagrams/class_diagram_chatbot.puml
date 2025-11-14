@@ -1,0 +1,68 @@
+@startuml AIKnowledgeBot Class Diagram
+
+!define TITLE Class Diagram - AI Knowledge Bot Module
+
+title TITLE
+
+' Class Definition
+class AIKnowledgeBot {
+  .. Attributes ..
+  - knowledge_base: str
+  - qa_pairs: Dict
+  - use_internet: bool
+  - wikipedia_api: str
+  - sources_used: List[str]
+  
+  .. Constructor ..
+  + __init__(knowledge_file: str)
+  
+  .. Public Methods ..
+  + get_answer(question: str): str
+  
+  .. Private Methods ..
+  - _load_knowledge(filepath: str): str
+  - _create_qa_database(): Dict
+  - _generate_generic_answer(question: str): str
+  - _search_online(question: str): str
+  - _search_wikipedia(question: str): str
+  - _search_curated_sources(question: str): str
+  - _extract_topics(question: str): List[str]
+}
+
+' External Resources
+class KnowledgeBase <<external>> {
+  + pdf_content.txt
+}
+
+class WikipediaAPI <<external>> {
+  + search(query: str): str
+}
+
+class WebSearch <<external>> {
+  + search(query: str): str
+}
+
+' Relationships
+AIKnowledgeBot --> KnowledgeBase: loads from
+AIKnowledgeBot --> WikipediaAPI: queries
+AIKnowledgeBot --> WebSearch: searches
+
+' Notes
+note right of AIKnowledgeBot
+  Intelligent chatbot που απαντά
+  σε ερωτήσεις βασισμένο στο
+  εκπαιδευτικό υλικό AI με:
+  
+  • PDF Knowledge Base
+  • Wikipedia Integration
+  • Web Search
+  • Semantic Search
+end note
+
+note bottom of KnowledgeBase
+  731KB text file με
+  περιεχόμενο από PDF
+  εκπαιδευτικού υλικού
+end note
+
+@enduml

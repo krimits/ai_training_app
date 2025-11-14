@@ -1,0 +1,87 @@
+@startuml System Architecture Component Diagram
+
+!define TITLE Component Diagram - AI Training App Architecture
+
+title TITLE
+
+' Packages and Components
+package "AI Training App" {
+  
+  package "Frontend Layer" {
+    component [Streamlit UI] as UI
+    component [Session State] as Session
+  }
+  
+  package "Application Layer" {
+    component [Main App\nai_training_app.py] as MainApp
+    component [Content Sections] as Content
+    component [Examples Module] as Examples
+    component [Quiz Module] as Quiz
+    component [Exercises Module] as Exercises
+  }
+  
+  package "AI Chatbot Layer" {
+    component [AIKnowledgeBot\nchatbot.py] as Chatbot
+    component [QA Database] as QADb
+  }
+  
+  package "Data Layer" {
+    database [Knowledge Base\npdf_content.txt] as KB
+    database [Sample Data\nsample_data.csv] as SampleData
+  }
+}
+
+' External Components
+package "External Services" {
+  component [Wikipedia API] as WikiAPI
+  component [Web Search] as WebSearch
+}
+
+package "ML Libraries" {
+  component [scikit-learn] as SKLearn
+  component [NumPy/Pandas] as NumPy
+  component [Matplotlib/Seaborn] as Viz
+}
+
+' Relationships
+UI --> MainApp: displays
+UI --> Session: manages state
+
+MainApp --> Content: shows theory
+MainApp --> Examples: shows Python examples
+MainApp --> Quiz: shows quizzes
+MainApp --> Exercises: shows exercises
+MainApp --> Chatbot: integrates chatbot
+
+Chatbot --> QADb: queries
+Chatbot --> KB: loads content
+Chatbot --> WikiAPI: searches
+Chatbot --> WebSearch: searches
+
+Examples --> SKLearn: uses
+Examples --> NumPy: uses
+Examples --> Viz: visualizes
+
+Exercises --> SampleData: loads
+Exercises --> SKLearn: trains models
+
+' Notes
+note right of Chatbot
+  Βασικό χαρακτηριστικό:
+  • Semantic Search
+  • Multiple Sources
+  • Context-Aware
+end note
+
+note top of MainApp
+  Κύρια εφαρμογή ~3100 lines
+  7 θεωρητικές ενότητες
+  15+ διαδραστικές ασκήσεις
+end note
+
+note bottom of KB
+  731KB text content
+  Εκπαιδευτικό υλικό AI
+end note
+
+@enduml

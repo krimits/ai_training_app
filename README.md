@@ -149,12 +149,25 @@ streamlit run ai_training_app.py
 ```
 ai_training_app/
 ├── ai_training_app.py      # Κύρια εφαρμογή
+├── chatbot.py              # AI Chatbot module
 ├── requirements.txt         # Python dependencies
+├── diagrams/               # UML διαγράμματα (PlantUML)
+├── ARCHITECTURE.md         # Τεχνική αρχιτεκτονική
 ├── README.md               # Αυτό το αρχείο
 ├── README.txt              # Οδηγίες offline
 ├── sample_data.csv         # Δείγμα δεδομένων
 └── .gitignore             # Git ignore rules
 ```
+
+### 🏗️ Αρχιτεκτονική & UML Διαγράμματα
+
+Για αναλυτική τεκμηρίωση της αρχιτεκτονικής με **6 επαγγελματικά UML διαγράμματα**, δείτε το [ARCHITECTURE.md](ARCHITECTURE.md):
+- Class Diagrams
+- Sequence Diagrams  
+- Component Diagrams
+- Activity Diagrams
+- Use Case Diagrams
+- Deployment Diagrams
 
 ## 🎯 Μαθησιακοί Στόχοι
 

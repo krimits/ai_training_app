@@ -1,0 +1,103 @@
+@startuml Main Application Activity Diagram
+
+!define TITLE Activity Diagram - Main Application Flow
+
+title TITLE
+
+start
+
+:Χρήστης ανοίγει εφαρμογή;
+
+:Φόρτωση Streamlit App\n(ai_training_app.py);
+
+:Εμφάνιση τίτλου και\nκύριου μενού;
+
+partition "Επιλογή Tab" {
+  
+  if (Ποιο tab επιλέχθηκε?) then (📚 Περιεχόμενο)
+    :Εμφάνιση θεωρητικού υλικού;
+    partition "7 Θεωρητικές Ενότητες" {
+      :1.1 Εισαγωγή στην AI;
+      :1.2 Δομικά Στοιχεία;
+      :1.3 Ιστορικά Επιτεύγματα;
+      :1.4 Εφαρμογές AI;
+      :1.5 Ηθική AI;
+      :1.6 Λειτουργία ChatGPT;
+      :1.7 ML, DL, Generative AI;
+    }
+    
+  elseif (🐍 Python Examples) then
+    :Εμφάνιση διαδραστικών\nπαραδειγμάτων;
+    partition "Python Examples" {
+      :Logistic Regression\n(με sliders);
+      :K-Means Clustering\n(με visualization);
+      :Neural Networks\n(με loss curves);
+    }
+    :Εκτέλεση κώδικα\nμε scikit-learn;
+    
+  elseif (🔬 Εξομοιώσεις) then
+    :Εμφάνιση simulations;
+    partition "Simulations" {
+      :Επίδραση Θορύβου;
+      :Overfitting vs Underfitting;
+      :Επίδραση Μεγέθους Dataset;
+      :Decision Boundary;
+    }
+    :Διαδραστική οπτικοποίηση;
+    
+  elseif (✅ Κουίζ) then
+    :Εμφάνιση Quiz;
+    :Χρήστης απαντά\nσε ερωτήσεις;
+    if (Σωστή απάντηση?) then (ναι)
+      :✅ Επιτυχία + Balloons;
+    else (όχι)
+      :❌ Λάθος + Εξήγηση;
+    endif
+    
+  elseif (💡 Ασκήσεις) then
+    :Εμφάνιση διαδραστικών\nασκήσεων;
+    partition "Exercises" {
+      :Πρόβλεψη Τιμών Ακινήτων;
+      :Image Classification;
+      :Sentiment Analysis;
+      :Recommendation System;
+    }
+    :Real-time predictions;
+    
+  elseif (🤖 AI Chatbot) then
+    :Εκκίνηση Chatbot;
+    :Αρχικοποίηση\nAIKnowledgeBot;
+    repeat
+      :Χρήστης υποβάλλει\nερώτηση;
+      :Chatbot αναζητά\nαπάντηση;
+      if (Πηγή απάντησης?) then (QA Database)
+        :Απάντηση από QA;
+      elseif (Knowledge Base) then
+        :Απάντηση από PDF;
+      elseif (Wikipedia) then
+        :Απάντηση από Wikipedia;
+      else (Web Search)
+        :Απάντηση από Web;
+      endif
+      :Εμφάνιση απάντησης\nκαι πηγών;
+    repeat while (Άλλη ερώτηση?) is (yes)
+    ->no;
+    
+  else (📖 Πόροι)
+    :Εμφάνιση πόρων;
+    :Links σε Colab Notebooks;
+    :Εξωτερικές πηγές;
+    :Documentation;
+  endif
+}
+
+:Χρήστης αλληλεπιδρά\nμε περιεχόμενο;
+
+if (Θέλει να συνεχίσει?) then (yes)
+  backward :Επιστροφή στο μενού;
+else (no)
+  :Κλείσιμο εφαρμογής;
+  stop
+endif
+
+@enduml
